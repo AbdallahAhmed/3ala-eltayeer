@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="robots" content="{{option('site_robots')}}">
-    <meta name="copyright" content="Othmanli">
+    <meta name="copyright" content="3altayeer">
     <meta name="language" content="{{app()->getLocale()}}">
     @section('meta')
         <meta name="title" content="<?=  option('site_title')?>">
@@ -44,12 +44,12 @@
     <script src="{{asset('assets')}}/js/swiper.js"></script>
     <script src="{{asset('assets')}}/js/main.js"></script>
     <script src="{{asset('')}}/js/common.js"></script>
+
     @stack('head')
 </head>
 <body class="{{app()->getLocale()}}">
-    @include('layouts.partials.header')
     @yield('content')
     @include('layouts.partials.footer')
-@stack('scripts')
 </body>
+@stack('scripts')
 </html>

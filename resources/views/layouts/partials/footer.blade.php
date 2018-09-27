@@ -8,94 +8,16 @@
             </div>
             <div class="sup-category">
                 <ul>
+                    @foreach($cats as $cat)
                     <li>
-                        <a href="#">الإمارات </a>
+                        <a href="#">{{$cat->name}} </a>
                         <p>
-                            <span>110.</span>
-                            فيديو
+                            <span>{{$cat->count}}.</span>
+                            {{trans('app.video')}}
                         </p>
 
                     </li>
-                    <li>
-                        <a href="#">شخصيات مؤثرة</a>
-                        <p>
-                            <span>110.</span>
-                            فيديو
-                        </p>
-
-                    </li>
-                    <li>
-                        <a href="#">عجائب وغرائب</a>
-                        <p>
-                            <span>110.</span>
-                            فيديو
-                        </p>
-
-                    </li>
-                    <li>
-                        <a href="#">كورة </a>
-                        <p>
-                            <span>110.</span>
-                            فيديو
-                        </p>
-
-                    </li>
-                    <li>
-                        <a href="#">المرأة </a>
-                        <p>
-                            <span>110.</span>
-                            فيديو
-                        </p>
-
-                    </li>
-                    <li>
-                        <a href="#">سياحة </a>
-                        <p>
-                            <span>110.</span>
-                            فيديو
-                        </p>
-
-                    </li>
-                    <li>
-                        <a href="#">مطبخ </a>
-                        <p>
-                            <span>110.</span>
-                            فيديو
-                        </p>
-
-                    </li>
-                    <li>
-                        <a href="#">ثقافة وتعليم </a>
-                        <p>
-                            <span>110.</span>
-                            فيديو
-                        </p>
-
-                    </li>
-                    <li>
-                        <a href="#">الإبداع والتكنولوجيا </a>
-                        <p>
-                            <span>110.</span>
-                            فيديو
-                        </p>
-
-                    </li>
-                    <li>
-                        <a href="#">فن وترفيه </a>
-                        <p>
-                            <span>110.</span>
-                            فيديو
-                        </p>
-
-                    </li>
-                    <li>
-                        <a href="#">الصحة </a>
-                        <p>
-                            <span>110.</span>
-                            فيديو
-                        </p>
-
-                    </li>
+                        @endforeach
 
                 </ul>
             </div>
@@ -105,14 +27,14 @@
     <div class="bottom">
         <div class="container">
             <div class="d-inline-block width-50 right">
-                <a href="#">عن الموقع</a>
-                <a href="#">الشروط والأحكام</a>
-                <a href="#">سياسة الخصوصية</a>
+                @foreach($footerNav as $item)
+                    <a href="{{nav_url($item)}}">{{$item->name}}</a>
+                @endforeach
             </div>
             <div class="d-inline-block width-50 left">
-                <a href="#"> FACEBOOK</a>
-                <a href="#"> TWITTER</a>
-                <a href="#"> YOUTUBE</a>
+                    <a  target="_blank" href="{{option('facebook_page')}}">Facebook</a>
+                    <a  target="_blank" href="{{option('twitter_page')}}">Twitter</a>
+                    <a  target="_blank" href="{{option('youtube_page')}}">Youtube</a>
             </div>
 
         </div>

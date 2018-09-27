@@ -38,7 +38,7 @@ class Navigations extends \Dot\Platform\Plugin
      */
     function install($command)
     {
-        parent::install();
+        parent::install($command);
     }
 
     /*
@@ -47,7 +47,7 @@ class Navigations extends \Dot\Platform\Plugin
      */
     function uninstall($command)
     {
-        parent::uninstall();
+        parent::uninstall($command);
     }
 
 }

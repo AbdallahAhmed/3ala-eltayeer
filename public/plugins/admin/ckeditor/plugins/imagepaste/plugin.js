@@ -31,7 +31,7 @@ CKEDITOR.plugins.add('imagepaste',
             // v 4.1 filters
             if (editor.addFeature) {
                 editor.addFeature({
-                    allowedContent: 'images[!src,id];'
+                    allowedContent: 'img[!src,id];'
                 });
             }
 

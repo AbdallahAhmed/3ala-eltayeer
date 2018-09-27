@@ -9,10 +9,11 @@
                 </div>
                 <div class="d-inline-block">
                     <ul class="menu">
-                        <li><a href="#">الرئيسية</a></li>
-                        <li><a href="#">عن على الطاير</a></li>
-                        <li><a href="#">الأقسام</a></li>
-                        <li><a href="#">إتصل بنا</a></li>
+                        <li ><a href="{{route('index',['lang'=>app()->getLocale()])}}"
+                                                      class="">{{trans('app.home')}}</a></li>
+                        @foreach($headerNav as $item)
+                        <li><a href="{{nav_url($item)}}">{{$item->name}}</a></li>
+                        @endforeach
                     </ul>
 
 

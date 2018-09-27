@@ -36,8 +36,7 @@ class NavigationsController extends Controller
 
         if (!$id) {
             $nav = Nav::first();
-//            if (count($nav)) {
-            if($nav != null){
+            if (count($nav)) {
                 return redirect()->route("admin.navigations.show", ["id" => $nav->id]);
             }
         }

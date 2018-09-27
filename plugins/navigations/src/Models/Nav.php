@@ -9,6 +9,7 @@ use Dot\Platform\Model;
  * Class Nav
  * @package Dot\Navigations\Models
  */
+
 class Nav extends Model
 {
 
@@ -99,7 +100,17 @@ class Nav extends Model
      */
     public function items()
     {
-        return $this->hasMany(self::class, 'menu');
+        return $this->hasMany(self::class, 'menu')->where('parent', 0);
     }
+
+    /**
+     * Items replation
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function children()
+    {
+        return $this->hasMany(self::class, 'parent');
+    }
+
 
 }

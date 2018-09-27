@@ -1,12 +1,13 @@
-<section class="home-section">
-    @extends('layouts.app')
+ @extends('layouts.app')
     @section('title',trans('app.home'))
     @section('content')
+    <section class="home-section">
+            @include('layouts.partials.header')
         <div class="container">
             <div class="social-h">
-                <a href="#">Facebook</a>
-                <a href="#">Twitter</a>
-                <a href="#">Youtube</a>
+                <a  target="_blank" href="{{option('facebook_page')}}">Facebook</a>
+                <a  target="_blank" href="{{option('twitter_page')}}">Twitter</a>
+                <a  target="_blank" href="{{option('youtube_page')}}">Youtube</a>
             </div>
             <div class="scroll">
                 <a href="#"><i class="icon-arrow-down"></i> Scroll down</a>
@@ -14,84 +15,21 @@
             <div class="swiper">
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="image"><img src="img/slider.png" alt=""></div>
-                            <div class="text">
-                                <p class="title">اكلات</p>
-                                <p><span>110.</span> فيديو</p>
-                                <a href="#" class="more">
-                                    إكتشف المزيد <i class="icon-slider-left"></i>
-                                </a>
-                                <a href="#" class="play">
-                                    <i class="icon-play"></i>
-                                </a>
+                        @foreach($categories as $category)
+                            <div class="swiper-slide">
+                                <div class="image"><img src="{{thumbnail($category->cover->path,'home-slider')}}" alt=""></div>
+                                <div class="text">
+                                    <p class="title">{{$category->name}}</p>
+                                    <p><span>{{category_count($category->id)}}.</span> {{trans('app.video')}}</p>
+                                    <a href="{{$category->path}}" class="more">
+                                        {{trans('app.view_more')}} <i class="icon-slider-left"></i>
+                                    </a>
+                                    <a href="{{$category->path}}" class="play">
+                                        <i class="icon-play"></i>
+                                    </a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="image"><img src="img/slider.png" alt=""></div>
-                            <div class="text">
-                                <p class="title">رياضة</p>
-                                <p><span>110.</span> فيديو</p>
-                                <a href="#" class="more">
-                                    إكتشف المزيد <i class="icon-slider-left"></i>
-                                </a>
-                                <a href="#" class="play">
-                                    <i class="icon-play"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="image"><img src="img/slider.png" alt=""></div>
-                            <div class="text">
-                                <p class="title">فن و ثقافة</p>
-                                <p><span>110.</span> فيديو</p>
-                                <a href="#" class="more">
-                                    إكتشف المزيد <i class="icon-slider-left"></i>
-                                </a>
-                                <a href="#" class="play">
-                                    <i class="icon-play"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="image"><img src="img/slider.png" alt=""></div>
-                            <div class="text">
-                                <p class="title">اكلات</p>
-                                <p><span>110.</span> فيديو</p>
-                                <a href="#" class="more">
-                                    إكتشف المزيد <i class="icon-slider-left"></i>
-                                </a>
-                                <a href="#" class="play">
-                                    <i class="icon-play"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="image"><img src="img/slider.png" alt=""></div>
-                            <div class="text">
-                                <p class="title">رياضة</p>
-                                <p><span>110.</span> فيديو</p>
-                                <a href="#" class="more">
-                                    إكتشف المزيد <i class="icon-slider-left"></i>
-                                </a>
-                                <a href="#" class="play">
-                                    <i class="icon-play"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="image"><img src="img/slider.png" alt=""></div>
-                            <div class="text">
-                                <p class="title">فن و ثقافة</p>
-                                <p><span>110.</span> فيديو</p>
-                                <a href="#" class="more">
-                                    إكتشف المزيد <i class="icon-slider-left"></i>
-                                </a>
-                                <a href="#" class="play">
-                                    <i class="icon-play"></i>
-                                </a>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
                 <div class="swiper-button-next swiper-button-white">
@@ -112,18 +50,24 @@
             @foreach($videos as $video)
                 <div class="card">
                     <div class="img-card" id="img-{{$video->id}}">
-                        {{--<a href="javascript:void(0)"><img src="{{thumbnail($video->image->path,'common')}}" alt="{{$video->title}}"></a>--}}
-                        <button class="play-card" id="icon-{{$video->id}}"><i class="icon-play" ></i></button>
-                        <video poster="{{thumbnail($video->image->path,'common')}}" id="video-{{$video->id}}"
-                               src="{{assets('assets')}}/images/small.mp4">
-                        </video>
-                        <div class="over-video">
-                            <div class="title d-inline-block">
-                                <a href="{{$video->category->path}}"><img
-                                            src="{{thumbnail($video->category->image->path,'category-logo')}}"
-                                            alt="{{$video->category->name}}"></a>
-                                <span class="second-title-font">{{$video->category->name}}</span>
+                        <a href="javascript:void(0)"><img src="{{thumbnail($video->image->path,'common')}}" alt="{{$video->title}}"></a>
+                        <a href="{{$video->path}}">
+                            <div>
+                                <button class="play-card" id="icon-{{$video->id}}"><i class="icon-play"></i></button>
+                                <video poster="{{thumbnail($video->image->path,'common')}}" id="video-{{$video->id}}"
+                                       src="{{$video->media->path}}">
+                                </video>
                             </div>
+                        </a>
+                        <div class="over-video">
+                            <a href="{{$video->category->path}}">
+                                <div class="title d-inline-block">
+                                    <img
+                                            src="{{thumbnail($video->category->image->path,'category-logo')}}"
+                                            alt="{{$video->category->name}}">
+                                    <span class="second-title-font">{{$video->category->name}}</span>
+                                </div>
+                            </a>
                             <div class="hover-card  d-inline-block ">
                                 <div class="social-icon">
                                     <a href="#"><i class="icon-youtube"></i></a>
@@ -142,46 +86,17 @@
                     </div>
                 </div>
             @endforeach
-            {{--@if(count($videos) == 12)--}}
+            @if(count($videos) == 12)
             <div class="btn-more">
-                <button class="more">المزيد</button>
+                <button class="more">{{trans('app.more')}}</button>
             </div>
-            {{--@endif--}}
+            @endif
         </div>
 
     </div>
 </section>
-<section class="subscribe">
-    <div class="bg-center"></div>
-    <div class="container">
-        <div class="text-container">
-            <div class="text">
-                <p class="main-title-font ">اشترك الآن</p>
-                <p class="second-title-font">نقدم فيديوهات مميزة اشترك الآن</p>
+    @include('extensions.subscribe')
 
-                <!--dalia comment -- d-none this text what will appear after subscription-->
-                <p class="message d-none">تم الإشتراك في القائمة البريدية</p>
-
-
-                <form class="d-none">
-                    <input type="text" placeholder="البريد الإلكتروني">
-                    <button><i class="icon-arrow-left"></i></button>
-                </form>
-                <div class="social">
-                    <a href="#">Facebook</a>
-                    <a href="#">Twitter</a>
-                    <a href="#">Youtube</a>
-                </div>
-
-            </div>
-
-
-        </div>
-        <div class="images">
-            <img src="img/6plus.png" alt="#">
-        </div>
-    </div>
-</section>
 <script>
     var swiper = new Swiper('.swiper-container', {
         slidesPerView: 3,
@@ -225,4 +140,4 @@
         });
     })
 </script>
-@endsection
+    @endsection

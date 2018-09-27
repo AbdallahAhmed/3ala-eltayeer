@@ -39,5 +39,6 @@ return [
         "posts" => Dot\Posts\Posts::class,
         "pages" => Dot\Pages\Pages::class,
         "navigations" => Dot\Navigations\Navigations::class,
+        "seo"   => \Dot\Seo\Seo::class
     ]
 ];

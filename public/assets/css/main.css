@@ -307,7 +307,7 @@ section {
 .video-details {
   margin-top: 100px;
   padding-bottom: 90px;
-  background: url(../img/latest-bg.png);
+  background: url(../images/latest-bg.png);
   margin-bottom: -50px; }
 
 .hover-card .icon-facebook {
@@ -320,7 +320,7 @@ section {
     height: 78%;
     top: 11%;
     width: 100%;
-    background-image: url("../img/subscribe.png");
+    background-image: url("../images/subscribe.png");
     background-size: cover;
     background-position: bottom; }
   .subscribe .container {
@@ -416,7 +416,7 @@ video {
     font-size: 20px; }
 
 .video-section {
-  background: url("../img/video-details-bg.png") no-repeat;
+  background: url("../images/video-details-bg.png") no-repeat;
   background-size: 100% calc(50% + 30px); }
   .video-section.open {
     background-size: 100% calc(50% + 125px); }
@@ -475,7 +475,7 @@ video {
   position: relative; }
 
 .category {
-  background: url("../img/category-bg-1.png");
+  background: url("../images/category-bg-1.png");
   background-size: cover; }
   .category .sliderContainer {
     padding-top: 80px; }
@@ -515,7 +515,7 @@ video {
       font-family: 'lato-b'; }
 
 .category-videos {
-  background: url("../img/category-videos.png");
+  background: url("../images/category-videos.png");
   background-size: cover;
   background-repeat: no-repeat;
   margin-bottom: 40px; }
@@ -556,7 +556,7 @@ video {
   display: flex;
   flex-wrap: wrap;
   height: 100vh;
-  background: url("../img/commonBg2.png");
+  background: url("../images/commonBg2.png");
   background-position: right;
   background-size: cover; }
   .error header {
@@ -610,7 +610,7 @@ video {
       text-transform: uppercase; }
 
 .about {
-  background-image: url("../img/commonBg.png");
+  background-image: url("../images/commonBg.png");
   background-size: cover;
   background-position: bottom; }
   .about .sub-icons {
@@ -618,7 +618,7 @@ video {
     width: 90%;
     margin: auto;
     text-align: center;
-    background-image: url("../img/shapes.png");
+    background-image: url("../images/shapes.png");
     padding: 90px 0 120px;
     background-repeat: no-repeat;
     background-position: center;
@@ -784,7 +784,7 @@ video {
   flex-direction: column;
   background-size: cover;
   background-position: top;
-  background-image: url("../img/commonBg2.png"); }
+  background-image: url("../images/commonBg2.png"); }
   .contact > .container {
     height: 100%;
     flex: 1;
@@ -873,7 +873,7 @@ video {
     margin-bottom: 0; }
 
   .category {
-    background-image: url("../img/category-bg-re.png"); }
+    background-image: url("../images/category-bg-re.png"); }
 
   .ball {
     top: -70px; }

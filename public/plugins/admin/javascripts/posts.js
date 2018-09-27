@@ -75,7 +75,7 @@ $(function () {
         var editor = $("iframe.cke_wysiwyg_frame").contents().find("body");
         var pollId = $(this).attr('data-id');
         console.log(pollId);
-        editor.append($('<p>').html('<div name="poll" class="shortcode" id="' + pollId + '"><images src="' + assetsURL + 'images/polls.png" style="max-width:50px;"></div>'));
+        editor.append($('<p>').html('<div name="poll" class="shortcode" id="' + pollId + '"><img src="' + assetsURL + 'images/polls.png" style="max-width:50px;"></div>'));
         $('#modal_polls').modal('hide')
     });
 
@@ -176,7 +176,7 @@ $(function () {
 
     function userFormatResult(user) {
         var markup = "<table class=''><tr>";
-        markup += "<td class='' style='vertical-align: top'><images src='" + user.image + "' style='max-width: 60px; display: inline-block; margin-right: 10px; margin-left: 10px;' /></td>";
+        markup += "<td class='' style='vertical-align: top'><img src='" + user.image + "' style='max-width: 60px; display: inline-block; margin-right: 10px; margin-left: 10px;' /></td>";
         markup += "<td class=''><div class='' style='font-weight: 600; color: #000; margin-bottom: 6px;'>" + user.name + "</div>";
         markup += "</td></tr></table>";
         return markup;
@@ -645,11 +645,11 @@ $(function () {
                     var html = "";
                     if (file.media_url.split('.').pop() == 'pdf') {
                         html += "<iframe src='" + file.media_url + "' width='100%' height='300px'  /><br>";
-                        html += "<a href='" + file.media_url + "' target='_blank'><images src='" + assetsURL + "images/pdf.png' width='30' height='30'></a>";
+                        html += "<a href='" + file.media_url + "' target='_blank'><img src='" + assetsURL + "images/pdf.png' width='30' height='30'></a>";
                         console.log(html);
                     } else {
                         if (file.media_type == 'image') {
-                            html += "<images src='" + AMAZON_URL + file.media_free_path + "' id='" + file.media_id + "'> ";
+                            html += "<img src='" + AMAZON_URL + file.media_free_path + "' id='" + file.media_id + "'> ";
                         } else {
                             html += file.media_embed;
                         }
@@ -804,7 +804,7 @@ $(function () {
                     upload = "{{URL::to('/uploads')}}";
                     if (!found) {
                         $(".photo-text").hide();
-                        $("#image-div").prepend('<div class="comment" style="border-top:none; padding: 5px 0;"><a href="#" class="image_delete" id="' + file.media_id + '"><i class="fa fa-times"></i></a><span class="image-wrap" id="' + file.media_id + '"><images src="' + AMAZON_URL + file.media_small_path + '" style="width: 100%; height: 150px;"></span></div>');
+                        $("#image-div").prepend('<div class="comment" style="border-top:none; padding: 5px 0;"><a href="#" class="image_delete" id="' + file.media_id + '"><i class="fa fa-times"></i></a><span class="image-wrap" id="' + file.media_id + '"><img src="' + AMAZON_URL + file.media_small_path + '" style="width: 100%; height: 150px;"></span></div>');
                         $("#photos").val(file.media_id + ',' + $("#photos").val());
                         $("#image-text-wrap").prepend('<textarea class="form-control photo-text" id="image_text_' + file.media_id + '" rows="10" style="resize:none" name="image_text_' + file.media_id + '" cols="50"></textarea>');
                         $("#photo-wrapper").show();
@@ -1625,7 +1625,7 @@ $(function () {
             '<div class="panel-group col-md-2" style="margin:0">' +
             '<div>' +
             '<a class="btn btn-primary save_manshet" style="display: none;">' + save_lang + '</a>' +
-            '<images src="' + assetsURL + 'images/loader.gif" class="manshet_load" style="display:none">' +
+            '<img src="' + assetsURL + 'images/loader.gif" class="manshet_load" style="display:none">' +
             '</div>' +
             '</div>' +
             '</div>' +

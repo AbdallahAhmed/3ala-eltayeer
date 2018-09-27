@@ -74,8 +74,7 @@
         </div>
 
 
-        {{--@if (count($nav) == 0)--}}
-        @if($nav != NULL)
+        @if (count($nav) == 0)
             <div class="row">
 
                 <div class="col-md-12">
@@ -89,8 +88,7 @@
             </div>
         @endif
 
-        {{--@if (count($nav))--}}
-        @if($nav != NULL)
+        @if (count($nav))
 
 
             <div class="modal fade" id="editNavMenu" tabindex="-1" role="dialog"

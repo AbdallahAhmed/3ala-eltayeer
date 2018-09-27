@@ -196,7 +196,7 @@
 
         if ($this.is('img')) {
             this.isImg = true;
-            this.originalUrl = url = $this.attr('src'); // e.g.: "images/picture.jpg"
+            this.originalUrl = url = $this.attr('src'); // e.g.: "img/picture.jpg"
 
             if (!url) { // Blank image
                 return;
@@ -238,7 +238,7 @@
         }
 
         // IE8 compatibility: Don't use "$().attr()" to set "src"
-        this.$clone = $clone = $('<images' + (crossOrigin || '') + ' src="' + (bustCacheUrl || url) + '">');
+        this.$clone = $clone = $('<img' + (crossOrigin || '') + ' src="' + (bustCacheUrl || url) + '">');
 
         $clone.one('load', $.proxy(function () {
             var image = $clone[0],
@@ -757,9 +757,9 @@
         var url = this.url;
 
         this.$preview = $(this.options.preview);
-        this.$viewBox.html('<images src="' + url + '">');
+        this.$viewBox.html('<img src="' + url + '">');
 
-        // Override images element styles
+        // Override img element styles
         // Add `display:block` to avoid margin top issue (Occur only when margin-top <= -height)
         this.$preview.each(function () {
             var $this = $(this);
@@ -768,7 +768,7 @@
                 width: $this.width(),
                 height: $this.height(),
                 original: $this.html()
-            }).html('<images src="' + url + '" style="display:block;width:100%;min-width:0!important;min-height:0!important;max-width:none!important;max-height:none!important;image-orientation: 0deg!important">');
+            }).html('<img src="' + url + '" style="display:block;width:100%;min-width:0!important;min-height:0!important;max-width:none!important;max-height:none!important;image-orientation: 0deg!important">');
         });
     };
 

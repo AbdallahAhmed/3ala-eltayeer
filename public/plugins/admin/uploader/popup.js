@@ -67,7 +67,7 @@ var activate_media = function (id) {
 
 
     $(".media-form [name=file_id]").val(media_id);
-    $(".details-box-image images").attr("src", media_thumbnail);
+    $(".details-box-image img").attr("src", media_thumbnail);
 
     if (media_provider == "") {
         // $(".details-box-name .file_name").text(media_path);
@@ -222,7 +222,7 @@ $(function () {
                         + '<div>'
                         + '<i class="fa fa-arrows"></i>'
                         + '</div>'
-                        + '<images src="' + file.thumbnail + '">'
+                        + '<img src="' + file.thumbnail + '">'
                         + '<label><input type="text" name="media_title[' + file.id + ']" value="' + file.title + '" /></label>'
                         + '</div>');
 
@@ -334,7 +334,7 @@ $(function () {
      */
 
 
-    $('#images').click(function (e) {
+    $('#img').click(function (e) {
         jcrop_api.setImage('http://localhost/dotmsr/public/uploads/ss.jpg');
         jcrop_api.setOptions({
             onSelect: function (c) {
@@ -372,7 +372,7 @@ $(function () {
             var sizes = ["large", "medium", "small", "one", "thumbnail", "free"];
 
             for (var i = 0; i <= sizes.length - 1; i++) {
-                $(".size-row images[data-size=" + sizes[i] + "]").attr("src", base_url + "/uploads/" + sizes[i] + "-" + data.path + "?" + time);
+                $(".size-row img[data-size=" + sizes[i] + "]").attr("src", base_url + "/uploads/" + sizes[i] + "-" + data.path + "?" + time);
             }
 
             //$(".cropper").attr("data-src", data.path);
@@ -384,9 +384,9 @@ $(function () {
              var d = new Date();
              var time = d.getTime();
 
-             $(".jcrop-holder images").css("width", data.width);
-             $(".jcrop-holder images").css("height", data.height);
-             $(".jcrop-holder images").attr("src", base_url + '/uploads/' + data.path + "?" + time);
+             $(".jcrop-holder img").css("width", data.width);
+             $(".jcrop-holder img").css("height", data.height);
+             $(".jcrop-holder img").attr("src", base_url + '/uploads/' + data.path + "?" + time);
 
              $(".original_image").css("width", data.width);
              $(".original_image").css("height", data.height);
@@ -431,12 +431,12 @@ $(function () {
             var d = new Date();
             var time = d.getTime();
 
-            $(".size-row images[data-size=" + size + "]").attr("src", data.url + "?" + time);
+            $(".size-row img[data-size=" + size + "]").attr("src", data.url + "?" + time);
 
 
             // refresh cropped image and replace with new one
 
-            $("images").each(function (image) {
+            $("img").each(function (image) {
 
                 var d = new Date();
                 var time = d.getTime();
@@ -500,7 +500,7 @@ $(function () {
             $image.cropper("replace", sizes[0].url);
 
             sizes.forEach(function (size, i) {
-                $(".size-row images[data-size=" + size.name + "]").attr("src", size.url);
+                $(".size-row img[data-size=" + size.name + "]").attr("src", size.url);
             });
 
             //$(".cropper").cropper("zoom", -1);
@@ -1235,7 +1235,7 @@ $(".filter-bar a").click(function () {
 
 
                 $(".media-form [name=file_id]").val(media_id);
-                $(".details-box-image images").attr("src", media_thumbnail);
+                $(".details-box-image img").attr("src", media_thumbnail);
                 if (media_provider == "") {
                     $(".details-box-name .file_name").text(media_path);
                 } else {
@@ -1572,7 +1572,7 @@ $(".filter-bar a").click(function () {
                                 }
 
                                 if (file.type == "image") {
-                                    file.embed = '<images src="' + file.url + '" />';
+                                    file.embed = '<img src="' + file.url + '" />';
                                 }
                                 files[i] = file;
                             }

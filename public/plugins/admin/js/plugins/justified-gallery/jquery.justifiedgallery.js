@@ -49,14 +49,14 @@ or send a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain Vie
             $(cont).addClass("justifiedGallery");
 
             var loaded = 0;
-            var images = new Array($(cont).find("images").length);
+            var images = new Array($(cont).find("img").length);
 
             if (images.length == 0) return;
 
-            $(cont).append("<div class=\"jg-loading\"><div class=\"jg-loading-images\"></div></div>");
+            $(cont).append("<div class=\"jg-loading\"><div class=\"jg-loading-img\"></div></div>");
 
             $(cont).find("a").each(function (index, entry) {
-                var imgEntry = $(entry).find("images");
+                var imgEntry = $(entry).find("img");
 
                 images[index] = new Array(5);
                 images[index]["src"] = (typeof $(imgEntry).data("safe-src") != 'undefined') ? $(imgEntry).data("safe-src") : $(imgEntry).attr("src");
@@ -119,7 +119,7 @@ or send a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain Vie
             if (typeof image["target"] != 'undefined') ris += "target=\"" + image["target"] + "\"";
 
             ris += "title=\"" + image["title"] + "\">";
-            ris += "  <images alt=\"" + image["alt"] + "\" src=\"" + image["src"] + suffix + image.extension + "\"";
+            ris += "  <img alt=\"" + image["alt"] + "\" src=\"" + image["src"] + suffix + image.extension + "\"";
             ris += "style=\"width: " + nw + "px; height: " + nh + "px;\">";
 
             if (settings.captions)
@@ -234,7 +234,7 @@ or send a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain Vie
             $(cont).find(".jg-resizedImageNotFound").remove();
 
             //fade in the images that we have changed and need to be reloaded
-            $(cont).find(".jg-image images").load(function () {
+            $(cont).find(".jg-image img").load(function () {
                 $(this).fadeTo(500, 1);
             }).error(function () {
                 $(cont).prepend(getErrorHtml("The image can't be loaded: \"" + $(this).attr("src") + "\"", "jg-resizedImageNotFound"));

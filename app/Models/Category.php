@@ -2,13 +2,23 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Dot\Categories\Models\Category as Model;
 
 class Category extends Model
 {
-    /*public function getPathAttribute()
+    public function getPathAttribute()
     {
-        return route('categories.show',['slug'=>$this->slug,'lang'=>$this->lang]);
-    }*/
+        //return route('categories.show',['slug'=>$this->slug,'lang'=>$this->lang]);
+        return "";
+    }
+
+    /**
+     * posts relation
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function posts()
+    {
+        return $this->belongsToMany(Category::class, "posts_categories", "category_id", "post_id");
+    }
 
 }

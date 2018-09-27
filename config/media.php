@@ -40,9 +40,10 @@ return [
         'medium' => array(460, 307),
         'small' => array(234, 156),
         'thumbnail' => array(165, 108),
-        'home-slider' => array(205, 486),
+        'home-slider' => array(305, 721),
         'common' => array(316, 232),
-        'category-logo' => array(19, 24)
+        'category-logo' => array(19, 24),
+        'video-details' => array(782, 447)
     ],
 
     /*

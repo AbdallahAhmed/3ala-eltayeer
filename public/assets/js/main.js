@@ -1,7 +1,7 @@
 $(function () {
-    /*$('.play-card').click(function (event) {
-         var video = document.getElementsByTagName('video');
-        //var video = $(this).closest('.video-card').find('video');
+    $('.play-card').click(function (event) {
+
+        var video = $(this).closest('.video-card').find('video');
         if (video[0].paused) {
             video[0].play();
         }
@@ -14,7 +14,7 @@ $(function () {
             $(event.currentTarget).parents('.video-card').find('button i').removeClass('icon-pause');
             $(event.currentTarget).parents('.video-card').find('button i').addClass('icon-play');
         });
-    });*/
+    });
     /*$('#search-icon').click(function () {
         $(this).parents('.nav').find('.search-page').toggle();
         $('.video-section').toggleClass('open');

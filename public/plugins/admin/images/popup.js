@@ -84,7 +84,7 @@ $(function () {
                         + '<a href="#" class="media_row_delete">'
                         + '<i class="fa fa-times"></i>'
                         + '</a>'
-                        + '<images src="' + file.thumbnail + '">'
+                        + '<img src="' + file.thumbnail + '">'
                         + '<label>' + file.title + '</label>'
                         + '</div>');
 
@@ -165,7 +165,7 @@ $(function () {
         var media_motive = base.children("[name=media_motive]").val();
 
         $(".media-form [name=file_id]").val(media_id);
-        $(".details-box-image images").attr("src", media_thumbnail);
+        $(".details-box-image img").attr("src", media_thumbnail);
 
         if (media_provider == "") {
             $(".details-box-name .file_name").text(media_path);
@@ -723,7 +723,7 @@ $(".filter-bar a").click(function () {
                             }
 
                             if (file.media_type == "image") {
-                                file.media_embed = '<images src="' + file.media_url + '" />';
+                                file.media_embed = '<img src="' + file.media_url + '" />';
                             }
 
                             files[i] = file;
