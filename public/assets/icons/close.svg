@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21.329 21.329">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="close" transform="translate(-16 -27.2)">
+    <path id="Path_262" data-name="Path 262" class="cls-1" d="M0,0H3V26H0Z" transform="translate(34.397 27.2) rotate(42)"/>
+    <path id="Path_261" data-name="Path 261" class="cls-1" d="M0,0H3V26H0V0Z" transform="translate(37.329 45.597) rotate(132)"/>
+  </g>
+</svg>

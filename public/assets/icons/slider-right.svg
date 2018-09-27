@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31.678 23.959">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #61c2ac;
+      }
+    </style>
+  </defs>
+  <g id="slider-right" transform="translate(31.678 23.959) rotate(180)">
+    <path id="Path_259" data-name="Path 259" class="cls-1" d="M0,0H30.552V1.608H0Z" transform="translate(1.126 11.417)"/>
+    <path id="Path_1" data-name="Path 1" class="cls-1" d="M12.221,23.959,0,11.9,11.9,0l1.126,1.126L2.251,11.9l11.1,10.934Z"/>
+  </g>
+</svg>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 20">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="menu" transform="translate(-23.888 -27)">
+    <path id="Path_256" data-name="Path 256" class="cls-1" d="M2,0A2,2,0,1,1,0,2,2,2,0,0,1,2,0Z" transform="translate(37.888 27)"/>
+    <path id="Path_251" data-name="Path 251" class="cls-1" d="M2,0A2,2,0,1,1,0,2,2,2,0,0,1,2,0Z" transform="translate(37.888 35)"/>
+    <path id="Path_250" data-name="Path 250" class="cls-1" d="M2,0A2,2,0,1,1,0,2,2,2,0,0,1,2,0Z" transform="translate(37.888 43)"/>
+    <path id="Path_255" data-name="Path 255" class="cls-1" d="M2,0A2,2,0,1,1,0,2,2,2,0,0,1,2,0Z" transform="translate(30.888 27)"/>
+    <path id="Path_252" data-name="Path 252" class="cls-1" d="M2,0A2,2,0,1,1,0,2,2,2,0,0,1,2,0Z" transform="translate(30.888 35)"/>
+    <path id="Path_249" data-name="Path 249" class="cls-1" d="M2,0A2,2,0,1,1,0,2,2,2,0,0,1,2,0Z" transform="translate(30.888 43)"/>
+    <path id="Path_254" data-name="Path 254" class="cls-1" d="M2,0A2,2,0,1,1,0,2,2,2,0,0,1,2,0Z" transform="translate(23.888 27)"/>
+    <path id="Path_253" data-name="Path 253" class="cls-1" d="M2,0A2,2,0,1,1,0,2,2,2,0,0,1,2,0Z" transform="translate(23.888 35)"/>
+    <path id="Path_248" data-name="Path 248" class="cls-1" d="M2,0A2,2,0,1,1,0,2,2,2,0,0,1,2,0Z" transform="translate(23.888 43)"/>
+  </g>
+</svg>

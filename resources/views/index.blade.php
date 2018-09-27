@@ -1,0 +1,228 @@
+<section class="home-section">
+    @extends('layouts.app')
+    @section('title',trans('app.home'))
+    @section('content')
+        <div class="container">
+            <div class="social-h">
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">Youtube</a>
+            </div>
+            <div class="scroll">
+                <a href="#"><i class="icon-arrow-down"></i> Scroll down</a>
+            </div>
+            <div class="swiper">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="image"><img src="img/slider.png" alt=""></div>
+                            <div class="text">
+                                <p class="title">اكلات</p>
+                                <p><span>110.</span> فيديو</p>
+                                <a href="#" class="more">
+                                    إكتشف المزيد <i class="icon-slider-left"></i>
+                                </a>
+                                <a href="#" class="play">
+                                    <i class="icon-play"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="image"><img src="img/slider.png" alt=""></div>
+                            <div class="text">
+                                <p class="title">رياضة</p>
+                                <p><span>110.</span> فيديو</p>
+                                <a href="#" class="more">
+                                    إكتشف المزيد <i class="icon-slider-left"></i>
+                                </a>
+                                <a href="#" class="play">
+                                    <i class="icon-play"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="image"><img src="img/slider.png" alt=""></div>
+                            <div class="text">
+                                <p class="title">فن و ثقافة</p>
+                                <p><span>110.</span> فيديو</p>
+                                <a href="#" class="more">
+                                    إكتشف المزيد <i class="icon-slider-left"></i>
+                                </a>
+                                <a href="#" class="play">
+                                    <i class="icon-play"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="image"><img src="img/slider.png" alt=""></div>
+                            <div class="text">
+                                <p class="title">اكلات</p>
+                                <p><span>110.</span> فيديو</p>
+                                <a href="#" class="more">
+                                    إكتشف المزيد <i class="icon-slider-left"></i>
+                                </a>
+                                <a href="#" class="play">
+                                    <i class="icon-play"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="image"><img src="img/slider.png" alt=""></div>
+                            <div class="text">
+                                <p class="title">رياضة</p>
+                                <p><span>110.</span> فيديو</p>
+                                <a href="#" class="more">
+                                    إكتشف المزيد <i class="icon-slider-left"></i>
+                                </a>
+                                <a href="#" class="play">
+                                    <i class="icon-play"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="image"><img src="img/slider.png" alt=""></div>
+                            <div class="text">
+                                <p class="title">فن و ثقافة</p>
+                                <p><span>110.</span> فيديو</p>
+                                <a href="#" class="more">
+                                    إكتشف المزيد <i class="icon-slider-left"></i>
+                                </a>
+                                <a href="#" class="play">
+                                    <i class="icon-play"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-button-next swiper-button-white">
+                    <i class="icon-slider-right"></i>
+                </div>
+                <div class="swiper-button-prev swiper-button-white">
+                    <i class="icon-slider-left"></i>
+                </div>
+            </div>
+        </div>
+</section>
+<section class="padding-section category-videos">
+
+    <div class="container">
+        <p class="title-section main-title-font  black-color ">{{trans('app.latest_videos')}}</p>
+        <hr class="under-line">
+        <div class="cards">
+            @foreach($videos as $video)
+                <div class="card">
+                    <div class="img-card" id="img-{{$video->id}}">
+                        {{--<a href="javascript:void(0)"><img src="{{thumbnail($video->image->path,'common')}}" alt="{{$video->title}}"></a>--}}
+                        <button class="play-card" id="icon-{{$video->id}}"><i class="icon-play" ></i></button>
+                        <video poster="{{thumbnail($video->image->path,'common')}}" id="video-{{$video->id}}"
+                               src="{{assets('assets')}}/images/small.mp4">
+                        </video>
+                        <div class="over-video">
+                            <div class="title d-inline-block">
+                                <a href="{{$video->category->path}}"><img
+                                            src="{{thumbnail($video->category->image->path,'category-logo')}}"
+                                            alt="{{$video->category->name}}"></a>
+                                <span class="second-title-font">{{$video->category->name}}</span>
+                            </div>
+                            <div class="hover-card  d-inline-block ">
+                                <div class="social-icon">
+                                    <a href="#"><i class="icon-youtube"></i></a>
+                                    <a href="#"><i class="icon-facebook"></i></a>
+                                    <a href="#"><i class="icon-twitter"></i></a>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="title-card clearfix">
+                        <a href="{{$video->path}}"><p class="second-title-font ">
+                                {{$video->title}}
+                            </p></a>
+                    </div>
+                </div>
+            @endforeach
+            {{--@if(count($videos) == 12)--}}
+            <div class="btn-more">
+                <button class="more">المزيد</button>
+            </div>
+            {{--@endif--}}
+        </div>
+
+    </div>
+</section>
+<section class="subscribe">
+    <div class="bg-center"></div>
+    <div class="container">
+        <div class="text-container">
+            <div class="text">
+                <p class="main-title-font ">اشترك الآن</p>
+                <p class="second-title-font">نقدم فيديوهات مميزة اشترك الآن</p>
+
+                <!--dalia comment -- d-none this text what will appear after subscription-->
+                <p class="message d-none">تم الإشتراك في القائمة البريدية</p>
+
+
+                <form class="d-none">
+                    <input type="text" placeholder="البريد الإلكتروني">
+                    <button><i class="icon-arrow-left"></i></button>
+                </form>
+                <div class="social">
+                    <a href="#">Facebook</a>
+                    <a href="#">Twitter</a>
+                    <a href="#">Youtube</a>
+                </div>
+
+            </div>
+
+
+        </div>
+        <div class="images">
+            <img src="img/6plus.png" alt="#">
+        </div>
+    </div>
+</section>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 3,
+        spaceBetween: 0,
+        centeredSlides: true,
+        slideToClickedSlide: true,
+        navigation: {
+            prevEl: '.swiper-button-next.swiper-button-white',
+            nextEl: '.swiper-button-prev.swiper-button-white'
+        },
+        breakpoints: {
+            768: {
+                slidesPerView: 1,
+                spaceBetween: 50
+            }
+        },
+
+    });
+
+    $(function () {
+        offset = 12
+        $('.btn-more').on('click', function () {
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.ajax({
+                type: "get",
+                url: "{{route('index',['lang'=>app()->getLocale()])}}",
+                /*data: {'offset': offset, 'limit': 12},*/
+                success: function (data) {
+                    if (data.count > 0) {
+                        $(data.view).hide().insertBefore('.btn-more').fadeIn(800);
+                        offset += data.count;
+                    }
+                    if (data.count < 12)
+                        $('.btn-more').remove();
+                }
+            })
+        });
+    })
+</script>
+@endsection
