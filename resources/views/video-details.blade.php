@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('meta')
+    @include('partials.meta',['post'=>$video])
+@endsection
 @section('title',$video->slug)
 @section('content')
     <section class="video-section">
@@ -18,7 +21,8 @@
                             <span class="second-title-font">{{$category->name}}</span>
                         </div>
                         <div class="hover-card  d-inline-block ">
-                            <div class="social-icon" data-youtube="{{$video->media->path}}" data-url="{{$video->path}}" data-title="{{$video->title}}">
+                            <div class="social-icon" data-youtube="{{$video->media->path}}" data-url="{{$video->path}}"
+                                 data-title="{{$video->title}}">
                                 <a href="javascript:void(0)"><i class="icon-youtube youtube shareBtn"></i></a>
                                 <a href="javascript:void(0)"><i class="icon-facebook facebook shareBtn"></i></a>
                                 <a href="javascript:void(0)"><i class="icon-twitter twitter shareBtn"></i></a>
@@ -43,11 +47,13 @@
                 @foreach($videos as $vid)
                     <div class="card">
                         <div class="img-card">
-                            <a href="{{$vid->path}}"><div>
-                                <img src="{{thumbnail($vid->image->path, 'common')}}"
-                                                                  alt="#">
-                                <button class="play-card"><i class="icon-play"></i></button>
-                            </div></a>
+                            <a href="{{$vid->path}}">
+                                <div>
+                                    <img src="{{thumbnail($vid->image->path, 'common')}}"
+                                         alt="#">
+                                    <button class="play-card"><i class="icon-play"></i></button>
+                                </div>
+                            </a>
                             <div class="over-video">
                                 <div class="title d-inline-block">
                                     <img src="{{thumbnail($vid->category->image->path, 'category-logo')}}" alt="#">
@@ -66,45 +72,45 @@
                         </div>
                         <div class="title-card clearfix">
                             <a href="{{$vid->path}}">
-                            <p class="second-title-font ">
-                                {{$vid->title}}
-                            </p></a>
+                                <p class="second-title-font ">
+                                    {{$vid->title}}
+                                </p></a>
                         </div>
                     </div>
                 @endforeach
-                    @if(count($videos) == 6)
-                        <div class="btn-more">
-                            <button class="more">{{trans('app.more')}}</button>
-                        </div>
-                    @endif
+                @if(count($videos) == 6)
+                    <div class="btn-more">
+                        <button class="more">{{trans('app.more')}}</button>
+                    </div>
+                @endif
             </div>
         </div>
     </section>
     @include('extensions.subscribe')
 
     <script>
-    $(function () {
-        offset = 6
-        $('.btn-more').on('click', function () {
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-            $.ajax({
-                type: "get",
-                url: "{{route('posts.show',['slug'=> $video->slug,'lang'=>app()->getLocale()])}}",
-                data: {'offset': offset, 'limit': 6},
-                success: function (data) {
-                    if (data.count > 0) {
-                        $(data.view).hide().insertBefore('.btn-more').fadeIn(800);
-                        offset += data.count;
+        $(function () {
+            offset = 6
+            $('.btn-more').on('click', function () {
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     }
-                    if (data.count < 6)
-                        $('.btn-more').remove();
-                }
-            })
-        });
-    })
-</script>
+                });
+                $.ajax({
+                    type: "get",
+                    url: "{{route('posts.show',['slug'=> $video->slug,'lang'=>app()->getLocale()])}}",
+                    data: {'offset': offset, 'limit': 6},
+                    success: function (data) {
+                        if (data.count > 0) {
+                            $(data.view).hide().insertBefore('.btn-more').fadeIn(800);
+                            offset += data.count;
+                        }
+                        if (data.count < 6)
+                            $('.btn-more').remove();
+                    }
+                })
+            });
+        })
+    </script>
 @endsection
