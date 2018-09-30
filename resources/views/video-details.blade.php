@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('meta')
-    @include('partials.meta',['post'=>$video])
+    @include('extensions.meta',['post'=>$video])
 @endsection
 @section('title',$video->slug)
 @section('content')
