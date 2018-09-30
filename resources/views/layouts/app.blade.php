@@ -44,12 +44,28 @@
     <script src="{{asset('assets')}}/js/swiper.js"></script>
     <script src="{{asset('assets')}}/js/main.js"></script>
     <script src="{{asset('')}}/js/common.js"></script>
+    <script data-pace-options='{ "ajax": false }'  src="{{asset('')}}/js/pace.js"></script>
+    <script>
+    Pace.once('start', function () {
+        document.getElementById('wrapper-body').style.opacity = "0";
 
+    })
+
+    Pace.once('hide', function () {
+        document.getElementById('wrapper-body').style.opacity = 1;
+        document.getElementById('progress-bar').style.display = "none";
+    })
+    </script>
     @stack('head')
 </head>
 <body class="{{app()->getLocale()}}">
+<div id="progress-bar">
+
+</div>
+<div id="wrapper-body" style="opacity: 0">
     @yield('content')
     @include('layouts.partials.footer')
+</div>
 </body>
 @stack('scripts')
 </html>
