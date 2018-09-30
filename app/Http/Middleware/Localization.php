@@ -20,9 +20,8 @@ class Localization
 
         app()->setLocale('ar');
 
-        $request->route()->forgetParameter('lang');
-        app('url')->defaults(['lang' => $lang]);
-
+        $request->route()->setParameter('lang','ar');
+        app('url')->defaults(['lang' => 'ar']);
 
         return $next($request);
     }

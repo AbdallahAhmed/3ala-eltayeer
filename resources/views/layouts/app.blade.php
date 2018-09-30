@@ -62,7 +62,7 @@
 <div id="progress-bar">
 
 </div>
-<div id="wrapper-body" style="opacity: 0">
+<div id="wrapper-body">
     @yield('content')
     @include('layouts.partials.footer')
 </div>
