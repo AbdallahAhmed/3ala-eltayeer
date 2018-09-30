@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Post;
+use Dot\Platform\Classes\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 
 class HomeController extends Controller
 {
@@ -89,5 +92,30 @@ class HomeController extends Controller
         }
 
         return view('search', $this->data);
+    }
+
+    /**
+     * GET /subscribe
+     * @route subscribe
+     * @param Request $request
+     * @return mixed
+     */
+    public function subscribe(Request $request)
+    {
+        $message = [
+            'email.required' => trans('app.email_required'),
+            'email.email' => trans('app.email_validation'),
+            'email.unique' => trans('app.email_unique')
+        ];
+        $validator = Validator::make($request->all(), [
+            'email' => 'required|email|unique:newsletter_accounts',
+        ], $message);
+        if ($validator->fails()) {
+            $errors = $validator->errors()->all();
+            return response()->json(['status' => false, 'errors' => $errors]);
+        }
+        $now = Carbon::now();
+        DB::table('newsletter_accounts')->insert(['email' => $request->get('email'), 'created_at' => $now, 'updated_at' => $now]);
+        return response()->json(['status' => true]);
     }
 }
