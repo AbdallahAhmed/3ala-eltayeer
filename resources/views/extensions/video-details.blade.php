@@ -12,11 +12,10 @@
                     <span class="second-title-font">{{$vid->category->name}}</span>
                 </div>
                 <div class="hover-card  d-inline-block ">
-                    <div class="social-icon">
-                        <a href="#"><i class="icon-youtube"></i></a>
-                        <a href="#"><i class="icon-facebook"></i></a>
-                        <a href="#"><i class="icon-twitter"></i></a>
-
+                    <div class="social-icon" data-youtube="{{$video->media->path}}" data-url="{{$video->path}}" data-title="{{$video->title}}">
+                        <a href="javascript:void(0)"><i class="icon-youtube youtube shareBtn"></i></a>
+                        <a href="javascript:void(0)"><i class="icon-facebook facebook shareBtn"></i></a>
+                        <a href="javascript:void(0)"><i class="icon-twitter twitter shareBtn"></i></a>
                     </div>
                 </div>
             </div>

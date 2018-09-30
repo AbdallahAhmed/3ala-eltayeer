@@ -15,6 +15,7 @@ Route::group(['prefix' => '/{lang?}', 'middleware' => ['localization']], functio
     Route::get('/', ['uses' => "HomeController@index"])->name('index');
     Route::get('/posts/{slug}', ['uses' => "HomeController@show"])->name('posts.show');
     Route::get('/page/{slug}', ['uses' => 'PageController@show'])->name('pages.show');
+    Route::get('/search/{q}', ['uses' => 'HomeController@search'])->name('search');
     Route::get('/contact-us', function (){
        return view('contact-us');
     });

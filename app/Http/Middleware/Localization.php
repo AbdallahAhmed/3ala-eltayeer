@@ -18,7 +18,7 @@ class Localization
 
         $lang = $request->route()->parameter('lang');
 
-        app()->setLocale($lang);
+        app()->setLocale('ar');
 
         $request->route()->forgetParameter('lang');
         app('url')->defaults(['lang' => $lang]);
