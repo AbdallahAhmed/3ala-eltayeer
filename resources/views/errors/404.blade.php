@@ -1,6 +1,7 @@
-@extends("admin::layouts.message")
+@extends('layouts.app')
 
-@section("content")
+@section('title','404')
+@section('content')
 
     <div class="text-center animated fadeInDown">
 
@@ -14,4 +15,4 @@
 
     </div>
 
-@stop
+@endsection

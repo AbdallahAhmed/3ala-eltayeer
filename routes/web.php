@@ -17,6 +17,7 @@ Route::group(['prefix' => '/{lang?}', 'middleware' => ['localization']], functio
     Route::get('/page/{slug}', ['uses' => 'PageController@show'])->name('pages.show');
     Route::get('/search/{q}', ['uses' => 'HomeController@search'])->name('search');
     Route::post('/subscribe', ['uses' => 'HomeController@subscribe'])->name('subscribe');
+    Route::get('/category/{slug}', ['uses' => 'CategoryController@index'])->name('category');
     Route::get('/contact-us', function (){
        return view('contact-us');
     });
