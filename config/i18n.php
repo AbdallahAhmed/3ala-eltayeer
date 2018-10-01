@@ -24,8 +24,8 @@ return [
         ],
 
         'en' => [
-            "title" => "English",
-            "direction" => "ltr"
+            "title" => "العربية",
+            "direction" => "rtl"
         ]
 
     ]
