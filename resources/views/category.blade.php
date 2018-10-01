@@ -79,7 +79,7 @@
     <script>
         $(document).on('click','#stop',function () {
                 $('iframe').each(function (i) {
-                    $(this).pauseVideo()
+                    console.log($(this).find('video')[0]);
                     return false;
                 })
         })
