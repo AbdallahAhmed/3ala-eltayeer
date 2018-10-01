@@ -8,7 +8,7 @@ class Category extends Model
 {
     public function getPathAttribute()
     {
-        return route('category',['slug'=>$this->slug,'lang'=>$this->lang]);
+        return route('category',['slug'=>$this->slug]);
     }
 
     /**

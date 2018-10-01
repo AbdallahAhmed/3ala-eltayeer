@@ -43,7 +43,9 @@ return [
         'home-slider' => array(305, 721),
         'common' => array(316, 232),
         'category-logo' => array(19, 24),
-        'video-details' => array(782, 447)
+        'category-logo-cat' => array(25, 24),
+        'video-details' => array(782, 447),
+        'swiper-small'  => array(141, 79)
     ],
 
     /*

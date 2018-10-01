@@ -37,7 +37,7 @@
                 let email = $('#email').val()
                 $.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
                 $.ajax({
-                    url: '{{route('subscribe',['lang'=>app()->getLocale()])}}',
+                    url: '{{route('subscribe')}}',
                     type: 'POST',
                     data: {
                         email: email

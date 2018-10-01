@@ -22,7 +22,7 @@ class Post extends Model
      */
     public function getPathAttribute()
     {
-        return route('posts.show', ['slug' => $this->slug, 'lang' => app()->getLocale()]);
+        return route('posts.show', ['slug' => $this->slug]);
     }
 
     public function getCategoryAttribute(){

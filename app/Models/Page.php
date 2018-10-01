@@ -12,6 +12,6 @@ class Page extends Model
      */
     public function getPathAttribute()
     {
-        return route('pages.show', ['slug' => $this->slug, 'lang' => $this->lang]);
+        return route('pages.show', ['slug' => $this->slug]);
     }
 }

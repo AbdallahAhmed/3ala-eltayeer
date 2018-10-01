@@ -33,7 +33,7 @@ class HomeController extends Controller
                 'view' => view('extensions.index-videos', ['videos' => $this->data['videos']])->render()
             ]);
         }
-        $this->data['categories'] = Category::with('posts')->where('lang', app()->getLocale())->get();
+        $this->data['categories'] = Category::with('posts')->get();
 
         return view('index', $this->data);
     }

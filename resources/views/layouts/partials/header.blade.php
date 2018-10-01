@@ -9,7 +9,7 @@
                 </div>
                 <div class="d-inline-block">
                     <ul class="menu">
-                        <li ><a href="{{route('index',['lang'=>app()->getLocale()])}}"
+                        <li ><a href="{{route('index')}}"
                                                       class="">{{trans('app.home')}}</a></li>
                         @foreach($headerNav as $item)
                         <li><a href="{{nav_url($item)}}">{{$item->name}}</a></li>

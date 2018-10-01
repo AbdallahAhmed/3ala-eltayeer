@@ -16,7 +16,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         view()->composer('layouts.partials.footer', function ($view) {
-            $cats = Category::with('posts')->where('lang', app()->getLocale())->get();
+            $cats = Category::with('posts')->get();
             foreach ($cats as $key => $cat){
                 $cats[$key]['count'] = category_count($cat->id);
             }

@@ -11,14 +11,12 @@
 |
 */
 
-Route::group(['prefix' => '/{lang?}', 'middleware' => ['localization']], function () {
-    Route::get('/', ['uses' => "HomeController@index"])->name('index');
-    Route::get('/posts/{slug}', ['uses' => "HomeController@show"])->name('posts.show');
-    Route::get('/page/{slug}', ['uses' => 'PageController@show'])->name('pages.show');
-    Route::get('/search/{q}', ['uses' => 'HomeController@search'])->name('search');
-    Route::post('/subscribe', ['uses' => 'HomeController@subscribe'])->name('subscribe');
-    Route::get('/category/{slug}', ['uses' => 'CategoryController@index'])->name('category');
-    Route::get('/contact-us', function (){
-       return view('contact-us');
-    });
+Route::get('/', ['uses' => "HomeController@index"])->name('index');
+Route::get('/posts/{slug}', ['uses' => "HomeController@show"])->name('posts.show');
+Route::get('/page/{slug}', ['uses' => 'PageController@show'])->name('pages.show');
+Route::get('/search/{q}', ['uses' => 'HomeController@search'])->name('search');
+Route::post('/subscribe', ['uses' => 'HomeController@subscribe'])->name('subscribe');
+Route::get('/category/{slug}', ['uses' => 'CategoryController@index'])->name('category');
+Route::get('/contact-us', function () {
+    return view('contact-us');
 });
