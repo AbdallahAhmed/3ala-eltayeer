@@ -9,9 +9,9 @@
         @include('layouts.partials.header')
         <div class="container">
             <div class="video-wrapper">
-                <div class="video-card">
+                <div class="video-card" id="video">
                     <div class="video">
-                        <video poster="{{thumbnail($video->image->path,'video-details')}}" id="video"
+                        <video poster="{{thumbnail($video->image->path,'video-details')}}"
                                src="{{$video->media->path}}">
                         </video>
                     </div>
@@ -58,6 +58,7 @@
     @include('extensions.subscribe')
 @endsection
 @push('scripts')
+    <script src="https://www.youtube.com/iframe_api"></script>
     <script>
         $(function () {
             offset = 6
@@ -82,15 +83,55 @@
                 })
             });
 
-            $('.play-card').click(function (e) {
+            $(document).on('click','.play-card',function (e) {
                 e.preventDefault()
                 var video = $(this).closest('.video-card').find('video');
-                src = video[0].src;
-                height = $('.video').height()
-                width = $('.video').width()
-                $('.video-card').html('<div class="video"> <iframe frameborder="0" height="'+height+'" width="'+width+'" src="'+src+'?autoplay=1"></iframe></div>');
+                var src = video[0].src;
+                var div = $('#video');
+                var height = div.height();
+                var width = div.width();
+                var vid = src.split('embed/')[1];
 
+                player = new YT.Player('video', {
+                    width: width,
+                    height: height,
+                    videoId: vid,
+                    playerVars: { 'autoplay': 1, 'controls': 1 },
+                    events:{
+                        onStateChange: stopVideo
+                    }
+                });
             });
+            function stopVideo(e) {
+                if(e.data == 0)
+                    $('.video-wrapper').html("<div class=\"video-card\" id=\"video\">\n" +
+                        "                    <div class=\"video\">\n" +
+                        "                        <video poster=\"{{thumbnail($video->image->path,'video-details')}}\"\n" +
+                        "                               src=\"{{$video->media->path}}\">\n" +
+                        "                        </video>\n" +
+                        "                    </div>\n" +
+                        "                    <button class=\"play-card\"><i class=\"icon-play\"></i></button>\n" +
+                        "                    <div class=\"over-video\">\n" +
+                        "                        <div class=\"title d-inline-block\">\n" +
+                        "                            <img src=\"{{thumbnail($category->image->path, 'category-logo')}}\" alt=\"#\">\n" +
+                        "                            <span class=\"second-title-font\">{{$category->name}}</span>\n" +
+                        "                        </div>\n" +
+                        "                        <div class=\"hover-card  d-inline-block \">\n" +
+                        "                            <div class=\"social-icon\" data-youtube=\"{{$video->media->path}}\" data-url=\"{{$video->path}}\"\n" +
+                        "                                 data-title=\"{!! $video->title !!}\">\n" +
+                        "                                <a href=\"javascript:void(0)\"><i class=\"icon-youtube youtube shareBtn\"></i></a>\n" +
+                        "                                <a href=\"javascript:void(0)\"><i class=\"icon-facebook facebook shareBtn\"></i></a>\n" +
+                        "                                <a href=\"javascript:void(0)\"><i class=\"icon-twitter twitter shareBtn\"></i></a>\n" +
+                        "                            </div>\n" +
+                        "                        </div>\n" +
+                        "                    </div>\n" +
+                        "                </div>\n" +
+                        "                <div class=\"title-card clearfix\">\n" +
+                        "                    <p class=\"second-title-font \">\n" +
+                        "                        {!! $video->title !!}\n" +
+                        "                    </p>\n" +
+                        "                </div>")
+            }
         })
     </script>
 @endpush

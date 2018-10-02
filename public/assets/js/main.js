@@ -25,13 +25,15 @@ $(function () {
     });*/
     var galleryTop = new Swiper('.gallery-top', {
         observeParents: true,
+        spaceBetween: 5
     });
 
-    /*galleryTop.on('slideChange', function () {
-        $('.gallery-top .swiper-slide video')[0].pause();
-        $('.gallery-top .swiper-slide button i').removeClass('icon-pause');
-        $('.gallery-top .swiper-slide button i').addClass('icon-play');
-    });*/
+    galleryTop.on('slideChange', function () {
+        //player.pauseVideo();
+        for(i = 0; i < videos.length; ++i){
+            videos[i].pauseVideo()
+        }
+    });
     var galleryThumbs = new Swiper('.gallery-thumbs', {
         spaceBetween: 20,
         slidesPerView: 3,
@@ -39,7 +41,6 @@ $(function () {
         slideToClickedSlide: true,
         observeParents: true,
         centeredSlides: true,
-        // spaceBetween: 10,
         navigation: {
             prevEl: '.swiper-button-next.swiper-button-white',
             nextEl: '.swiper-button-prev.swiper-button-white'
