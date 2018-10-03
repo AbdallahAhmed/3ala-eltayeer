@@ -1,7 +1,7 @@
 @foreach($videos as $video)
     <div class="card">
         <div class="img-card" id="img-{{$video->id}}">
-            <a href="javascript:void(0)"><img src="{{thumbnail($video->image->path,'common')}}" alt="{{$video->title}}"></a>
+            <a href="{{$video->path}}"><img src="{{thumbnail($video->image->path,'common')}}" alt="{{$video->title}}"></a>
             <a href="{{$video->path}}">
                 <div>
                     <button class="play-card" id="icon-{{$video->id}}"><i class="icon-play"></i></button>

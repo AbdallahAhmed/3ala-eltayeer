@@ -46,7 +46,6 @@
             <hr class="under-line">
             <div class="cards">
                 @include('extensions.index-videos', $videos)
-
                 @if(count($videos) == 6)
                     <div class="btn-more">
                         <button class="more">{{trans('app.more')}}</button>

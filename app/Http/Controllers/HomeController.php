@@ -59,7 +59,7 @@ class HomeController extends Controller
             return response()->json([
                 'videos' => $this->data['videos'],
                 'count' => count($this->data['videos']),
-                'view' => view('extensions.video-details', ['videos' => $this->data['videos']])->render()
+                'view' => view('extensions.index-videos', ['videos' => $this->data['videos']])->render()
             ]);
         }
         $this->data['video'] = Post::where('slug', $slug)->firstorfail();

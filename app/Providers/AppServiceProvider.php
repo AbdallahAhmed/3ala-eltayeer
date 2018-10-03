@@ -15,11 +15,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        view()->composer('layouts.partials.footer', function ($view) {
-            $cats = Category::with('posts')->get();
-            foreach ($cats as $key => $cat){
-                $cats[$key]['count'] = category_count($cat->id);
-            }
+        require app_path('./helper.php');
+        $cats = Category::with('posts')->get();
+        foreach ($cats as $key => $cat){
+            $cats[$key]['count'] = category_count($cat->id);
+        }
+        view()->composer('layouts.partials.footer', function ($view) use ($cats) {
+
             $view->with('cats', $cats);
 
             ($nav = Nav::with('items')->where(['menu' => "15"])->get());
@@ -27,13 +29,12 @@ class AppServiceProvider extends ServiceProvider
             $view->with('footerNav', $nav);
         });
 
-        view()->composer('layouts.partials.header', function ($view) {
+        view()->composer('layouts.partials.header', function ($view) use ($cats) {
             ($nav = Nav::with('items')->where(['menu' => "1"])->get());
 
-            $view->with('headerNav', $nav);
+            $view->with(['headerNav'=>$nav,'cats' =>$cats]);
         });
 
-        require app_path('./helper.php');
     }
 
     /**

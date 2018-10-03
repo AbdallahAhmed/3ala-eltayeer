@@ -25,8 +25,19 @@ class Post extends Model
         return route('posts.show', ['slug' => $this->slug]);
     }
 
+
     public function getCategoryAttribute(){
         return $this->categories()->first();
+    }
+
+
+    /**
+     * Categories relation
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class, "posts_categories", "post_id", "category_id");
     }
 
 

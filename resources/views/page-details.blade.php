@@ -10,7 +10,7 @@
                 <!--<img src="img/shapes.png" alt="" class="shapes">-->
             </div>
             <p>
-                {!! $page->content !!}
+                {{ strip_tags($page->content)}}
             </p>
             <div class="social-tabs">
                 <a href="#">YOUTUBE</a>

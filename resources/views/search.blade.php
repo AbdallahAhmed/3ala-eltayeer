@@ -7,9 +7,9 @@
         </section>
         <div class="search-page">
             <div class="container">
-                <form>
-                    <input type="text" placeholder="إبحث" class="third-title-font">
-                    <button>
+                <form id="search">
+                    <input type="text" name="q" placeholder="إبحث" class="third-title-font">
+                    <button name="search-submit">
                         <i class="icon-arrow-left"></i>
                     </button>
                 </form>
@@ -56,3 +56,18 @@
         </section>
     </div>
 @endsection
+@push('scripts')
+    <script>
+        $('[name="search-submit"]').click(function (e) {
+            alert()
+            e.preventDefault();
+            let q = $('[name="q"]').val();
+            if (q.trim().length == 0) {
+                $('[name="q"]').val('');
+                return false;
+            }
+            window.location.href = encodeURI("{{route('index')}}" + '/search/' + encodeURIComponent(q));
+            return false;
+        });
+    </script>
+@endpush
