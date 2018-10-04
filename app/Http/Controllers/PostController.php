@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
+    public $data = array();
     public function show(Request $request, $slug)
     {
 
