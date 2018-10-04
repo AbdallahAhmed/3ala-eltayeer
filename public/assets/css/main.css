@@ -464,7 +464,7 @@ section {
 .video-details {
     margin-top: 100px;
     padding-bottom: 90px;
-    background: url(../img/latest-bg.png);
+    background: url(../images/latest-bg.png);
     margin-bottom: -50px;
 }
 
@@ -481,7 +481,7 @@ section {
     height: 78%;
     top: 11%;
     width: 100%;
-    background-image: url("../img/subscribe.png");
+    background-image: url("../images/subscribe.png");
     background-size: cover;
     background-position: bottom;
 }
@@ -620,7 +620,7 @@ video {
 }
 
 .video-section {
-    background: url("../img/Group 1.png") no-repeat;
+    background: url("../images/Group 1.png") no-repeat;
     background-size: 100% calc(50% + 30px);
 }
 
@@ -707,7 +707,7 @@ video {
 }
 
 .category {
-    background: url("../img/category-bg-1.png");
+    background: url("../images/category-bg-1.png");
     background-size: cover;
 }
 
@@ -772,7 +772,7 @@ video {
 }
 
 .category-videos {
-    background: url("../img/category-videos.png");
+    background: url("../images/category-videos.png");
     background-size: cover;
     background-repeat: no-repeat;
     margin-bottom: 40px;
@@ -828,7 +828,7 @@ video {
     display: flex;
     flex-wrap: wrap;
     height: 100vh;
-    background: url("../img/commonBg2.png");
+    background: url("../images/commonBg2.png");
     background-position: right;
     background-size: cover;
 }
@@ -911,7 +911,7 @@ video {
 }
 
 .about {
-    background-image: url("../img/commonBg.png");
+    background-image: url("../images/commonBg.png");
     background-size: cover;
     background-position: bottom;
 }
@@ -921,7 +921,7 @@ video {
     width: 90%;
     margin: auto;
     text-align: center;
-    background-image: url("../img/shapes.png");
+    background-image: url("../images/shapes.png");
     padding: 90px 0 120px;
     background-repeat: no-repeat;
     background-position: center;
@@ -950,7 +950,7 @@ video {
 }
 
 .home-section {
-    background-image: url("../img/home-bg.png");
+    background-image: url("../images/home-bg.png");
     background-position: center;
     background-size: cover;
 }
@@ -1155,7 +1155,7 @@ video {
     flex-direction: column;
     background-size: cover;
     background-position: top;
-    background-image: url("../img/commonBg2.png");
+    background-image: url("../images/commonBg2.png");
 }
 
 .contact > .container {
@@ -1282,7 +1282,7 @@ video {
     }
 
     .category {
-        background-image: url("../img/category-bg-re.png");
+        background-image: url("../images/category-bg-re.png");
     }
 
     .ball {
