@@ -59,7 +59,6 @@
 @push('scripts')
     <script>
         $('[name="search-submit"]').click(function (e) {
-            alert()
             e.preventDefault();
             let q = $('[name="q"]').val();
             if (q.trim().length == 0) {

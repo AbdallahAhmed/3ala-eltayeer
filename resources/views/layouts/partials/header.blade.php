@@ -78,7 +78,6 @@
     <script>
         $('.search-form').submit(function (e) {
             e.preventDefault();
-            alert()
             let q = $(this).find('input').val();
             if (q.trim().length == 0) {
                 $(this).find('input').val('');
