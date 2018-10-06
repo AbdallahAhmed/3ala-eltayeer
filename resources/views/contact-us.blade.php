@@ -74,9 +74,13 @@
                     url: "{{route('contact-us')}}",
                     data: arr,
                     success: function () {
-                        $('.contact-section').hide();
+                        $('.contact-section').fadeOut(1000, function () {
                         $('.social-tabs').hide();
                         $('.confirm').show();
+                        });
+                    },
+                    error:function () {
+                        alert("Internal server error")
                     }
                 })
             }
