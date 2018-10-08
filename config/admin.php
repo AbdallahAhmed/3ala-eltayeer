@@ -35,7 +35,7 @@ return [
 
     'plugins' => [
         "admin" => Dot\Platform\System::class,
-        "i18n" => Dot\I18n\I18n::class,
+        //"i18n" => Dot\I18n\I18n::class,
         "posts" => Dot\Posts\Posts::class,
         "pages" => Dot\Pages\Pages::class,
         "navigations" => Dot\Navigations\Navigations::class,

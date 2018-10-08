@@ -10,7 +10,7 @@
                 <ul>
                     @foreach($cats as $cat)
                         <li>
-                            <a href="#">{{$cat->name}} </a>
+                            <a href="{{$cat->path}}">{{$cat->name}} </a>
                             <p>
                                 <span>{{$cat->count}}.</span>
                                 {{trans('app.video')}}

@@ -52,7 +52,7 @@
                             <ul class="sub-items">
                                 @foreach($cats as $cat)
                                     <li>
-                                        <a href="#">{{$cat->name}} </a>
+                                        <a href="{{$cat->path}}">{{$cat->name}} </a>
                                         <p>
                                             <span>{{$cat->count}}.</span>
                                             {{trans('app.video')}}
@@ -78,7 +78,6 @@
     <script>
         $('.search-form').submit(function (e) {
             e.preventDefault();
-            alert()
             let q = $(this).find('input').val();
             if (q.trim().length == 0) {
                 $(this).find('input').val('');
