@@ -23,7 +23,7 @@
                         <i class="icon-menu"></i>
                     </button>
                     <form class="search-form" id="search">
-                        <input type="text" placeholder="ابحث">
+                        <input type="text" maxlength="20" placeholder="ابحث">
                         <button class="btn-search" id="search-icon" >
                             <i class="icon-search"></i>
                         </button>

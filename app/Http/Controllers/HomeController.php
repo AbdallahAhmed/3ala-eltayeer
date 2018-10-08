@@ -13,6 +13,13 @@ class HomeController extends Controller
 {
     public $data = array();
 
+    /**
+     * GET /
+     * @route index
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @throws \Throwable
+     */
     public function index(Request $request)
     {
 
@@ -39,8 +46,15 @@ class HomeController extends Controller
     }
 
 
-
-    public function search(Request $request, $q)
+    /**
+     * GET /search/{q?}
+     * @route search
+     * @param Request $request
+     * @param $q
+     * @return mixed
+     * @throws \Throwable
+     */
+    public function search(Request $request, $q = '')
     {
         $offset = $request->get('offset', 0);
         $limit = $request->get('limit', 3);
@@ -55,6 +69,7 @@ class HomeController extends Controller
             })
             ->offset($offset)
             ->limit($limit)
+            ->orderBy('published_at', 'DESC')
             ->get();
         $this->data['count'] = count($this->data['videos']);
 

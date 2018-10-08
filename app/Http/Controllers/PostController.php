@@ -8,6 +8,15 @@ use Illuminate\Http\Request;
 class PostController extends Controller
 {
     public $data = array();
+
+    /**
+     * GET /posts/{slug}
+     * @route posts.show
+     * @param Request $request
+     * @param $slug
+     * @return mixed
+     * @throws \Throwable
+     */
     public function show(Request $request, $slug)
     {
 
