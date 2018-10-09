@@ -34,7 +34,7 @@ $(function () {
             videos[i].pauseVideo()
         }
         //videos[galleryTop.activeIndex].playVideo()
-        alert(videos[galleryTop.activeIndex].getCurrentTime());
+
     });
     var galleryThumbs = new Swiper('.gallery-thumbs', {
         spaceBetween: 20,
