@@ -70,7 +70,6 @@ return [
     "add_gallery" => "أضف ألبوم",
     "no_galleries_found" => "لا توجد ألبومات",
 
-
     'attributes' => [
         'title' => 'العنوان',
         'excerpt' => 'المقتطف',

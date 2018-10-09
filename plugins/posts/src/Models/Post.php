@@ -54,7 +54,8 @@ class Post extends Model
      */
     protected $creatingRules = [
         'title' => 'required',
-        'image_id' => 'required'
+        'image_id' => 'required',
+        'media_id' => 'required'
     ];
 
     /**
@@ -62,7 +63,8 @@ class Post extends Model
      */
     protected $updatingRules = [
         'title' => 'required',
-        'image_id' => 'required'
+        'image_id' => 'required',
+        'media_id' => 'required'
     ];
 
     /**

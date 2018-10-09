@@ -143,7 +143,7 @@
                                 <div class="panel-body form-group">
                                     <div class="row post-image-block">
                                         <input type="hidden" name="image_id" class="post-image-id"
-                                               value="{{ ($post->image) ? $post->image->id : 0 }}">
+                                               value="{{ ($post->image) ? $post->image->id : '' }}">
 
                                         <a class="change-post-image label" href="javascript:void(0)">
                                             <i class="fa fa-pencil text-navy"></i>
@@ -171,7 +171,7 @@
                                 <div class="panel-body form-group">
                                     <div class="row post-media-block">
                                         <input type="hidden" name="media_id" class="post-media-id"
-                                               value="{{ ($post->media) ? $post->media->id : 0 }}">
+                                               value="{{ ($post->media) ? $post->media->id : '' }}">
 
 
                                         <a class="change-post-media label" href="javascript:void(0)">
@@ -548,13 +548,13 @@
 
             $(".remove-post-image").click(function () {
                 var base = $(this);
-                $(".post-image-id").first().val(0);
+                $(".post-image-id").first().val('');
                 $(".post-image").attr("src", "{{ assets("admin::default/post.png") }}");
             });
 
             $(".remove-post-media").click(function () {
                 var base = $(this);
-                $(".post-media-id").first().val(0);
+                $(".post-media-id").first().val('');
                 $(".post-media").attr("src", "{{ assets("admin::default/media.gif") }}");
             });
 
