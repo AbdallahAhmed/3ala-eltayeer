@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\SubscribeMail;
 use App\Models\Category;
 use App\Models\Post;
 use Dot\Platform\Classes\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
 class HomeController extends Controller
@@ -105,6 +107,7 @@ class HomeController extends Controller
         }
         $now = Carbon::now();
         DB::table('newsletter_accounts')->insert(['email' => $request->get('email'), 'created_at' => $now, 'updated_at' => $now]);
+        Mail::to($request->get('email'))->send(new SubscribeMail($request->get('email')));
         return response()->json(['status' => true]);
     }
 }
