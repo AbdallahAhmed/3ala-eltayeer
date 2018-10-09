@@ -29,7 +29,8 @@
             "App\\": "app/",
             "Dot\\Navigations\\":"plugins/navigations/src/",
             "Dot\\Categories\\":"plugins/categories/src/",
-            "Dot\\Seo\\":"plugins/seo/src/"
+            "Dot\\Seo\\":"plugins/seo/src/",
+            "Dot\\Posts\\": "plugins/posts/src/"
         }
     },
     "autoload-dev": {

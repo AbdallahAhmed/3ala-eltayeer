@@ -3,7 +3,7 @@
 namespace Dot\Categories\Controllers;
 
 use Action;
-use Dot\Categories\Models\Category;
+use App\Models\Category;
 use Dot\Platform\Controller;
 use Illuminate\Support\Facades\Auth;
 use Redirect;
