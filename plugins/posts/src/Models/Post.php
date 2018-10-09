@@ -79,6 +79,16 @@ class Post extends Model
         static::addGlobalScope(new PostScope);
     }
 
+
+    /*
+     * @return array
+     */
+    protected function setValidationAttributes()
+    {
+        return (array)trans( "posts::posts.attributes");
+    }
+
+
     /**
      * Status scope
      * @param $query
