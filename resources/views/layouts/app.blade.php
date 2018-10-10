@@ -53,15 +53,16 @@
     Pace.once('hide', function () {
         document.getElementById('wrapper-body').style.opacity = 1;
         document.getElementById('progress-bar').style.display = "none";
+        document.getElementById('wrapper-body').style.overflow = "auto";
     })
     </script>
     @stack('head')
 </head>
-<body class="{{app()->getLocale()}}">
+<body id="body" class="{{app()->getLocale()}}">
 <div id="progress-bar" >
 
 </div>
-<div id="wrapper-body" style="opacity: 0">
+<div id="wrapper-body" style="opacity: 0; overflow: hidden">
     @yield('content')
     @include('layouts.partials.footer')
 </div>
