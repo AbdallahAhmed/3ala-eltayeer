@@ -18,6 +18,7 @@ class Categories extends \Dot\Platform\Plugin
 
         parent::boot();
 
+
         Navigation::menu("sidebar", function ($menu) {
 
             if (Auth::user()->can("categories.manage")) {

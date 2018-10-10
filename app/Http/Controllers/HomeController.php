@@ -94,9 +94,9 @@ class HomeController extends Controller
     public function subscribe(Request $request)
     {
         $message = [
-            'email.required' => trans('app.email_required'),
-            'email.email' => trans('app.email_validation'),
-            'email.unique' => trans('app.email_unique')
+            'email.required' => trans('app.subscribe.required'),
+            'email.email' => trans('app.subscribe.validation'),
+            'email.unique' => trans('app.subscribe.unique')
         ];
         $validator = Validator::make($request->all(), [
             'email' => 'required|email|unique:newsletter_accounts',
