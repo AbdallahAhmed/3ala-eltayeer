@@ -48,7 +48,6 @@
     <script>
     Pace.once('start', function () {
         document.getElementById('wrapper-body').style.opacity = "0";
-
     })
 
     Pace.once('hide', function () {
@@ -62,7 +61,7 @@
 <div id="progress-bar" >
 
 </div>
-<div id="wrapper-body">
+<div id="wrapper-body" style="opacity: 0">
     @yield('content')
     @include('layouts.partials.footer')
 </div>

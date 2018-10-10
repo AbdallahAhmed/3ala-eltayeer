@@ -36,7 +36,11 @@
                 e.preventDefault();
                 $("#s-button").fadeOut(200);
                 let email = $('#email').val()
-                $.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
                 $.ajax({
                     url: '{{route('subscribe')}}',
                     type: 'POST',
