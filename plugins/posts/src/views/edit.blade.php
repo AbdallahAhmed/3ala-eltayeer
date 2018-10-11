@@ -277,7 +277,7 @@
                         </div>
                     </div>
 
-                    <div class="panel panel-default">
+                   {{-- <div class="panel panel-default">
                         <div class="panel-heading">
                             <i class="fa fa-th-large"></i>
                             {{ trans("posts::posts.add_block") }}
@@ -303,10 +303,10 @@
                                 {{ trans("posts::posts.no_blocks") }}
                             @endif
                         </div>
-                    </div>
+                    </div>--}}
 
 
-                    <div class="panel panel-default format-area album-format-area">
+                   {{-- <div class="panel panel-default format-area album-format-area">
                         <div class="panel-heading">
                             <i class="fa fa-camera"></i>
                             {{ trans("posts::posts.add_gallery") }}
@@ -352,7 +352,7 @@
                                 <ul id="mytags"></ul>
                             </div>
                         </div>
-                    </div>
+                    </div>--}}
 
                     @foreach(Action::fire("post.form.sidebar") as $output)
                         {!! $output !!}

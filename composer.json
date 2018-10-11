@@ -30,7 +30,10 @@
             "Dot\\Navigations\\":"plugins/navigations/src/",
             "Dot\\Categories\\":"plugins/categories/src/",
             "Dot\\Seo\\":"plugins/seo/src/",
-            "Dot\\Posts\\": "plugins/posts/src/"
+            "Dot\\Posts\\": "plugins/posts/src/",
+            "Dot\\Tags\\": "plugins/tags/src/",
+            "Dot\\Blocks\\": "plugins/blocks/src/",
+            "Dot\\Galleries\\": "plugins/galleries/src/"
         }
     },
     "autoload-dev": {

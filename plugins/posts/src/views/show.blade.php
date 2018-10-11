@@ -80,14 +80,14 @@
                             </select>
 
 
-                            <select name="block_id" class="form-control chosen-select chosen-rtl">
+                            {{--<select name="block_id" class="form-control chosen-select chosen-rtl">
                                 <option value="">{{ trans("posts::posts.all_blocks") }}</option>
                                 @foreach(Dot\Blocks\Models\Block::all() as $block)
                                     <option @if (Request::get("block_id") == $block->id) selected='selected' @endif
                                     value="{{ $block->id }}">{{ $block->name }}</option>
                                 @endforeach
                             </select>
-
+--}}
                             <select name="format" class="form-control chosen-select chosen-rtl">
                                 <option value="">{{ trans("posts::posts.all_formats") }}</option>
                                 @foreach (config("posts.formats") as $format => $icon)
@@ -186,7 +186,7 @@
                                         <th>{{ trans("posts::posts.attributes.title") }}</th>
                                         <th>{{ trans("posts::posts.attributes.created_at") }}</th>
                                         <th>{{ trans("posts::posts.user") }}</th>
-                                        <th>{{ trans("posts::posts.tags") }}</th>
+                                        {{--<th>{{ trans("posts::posts.tags") }}</th>--}}
                                         <th>{{ trans("posts::posts.attributes.status") }}</th>
                                         <th>{{ trans("posts::posts.actions") }}</th>
                                     </tr>
@@ -219,7 +219,7 @@
                                                 </a>
                                             </td>
 
-                                            <td>
+                                           {{-- <td>
                                                 @if (count($post->tags))
                                                     @foreach ($post->tags as $tag)
                                                         <a href="?tag_id={{ $tag->id }}" class="text-navy">
@@ -229,7 +229,7 @@
                                                 @else
                                                     -
                                                 @endif
-                                            </td>
+                                            </td>--}}
 
                                             <td>
                                                 @if ($post->status)
