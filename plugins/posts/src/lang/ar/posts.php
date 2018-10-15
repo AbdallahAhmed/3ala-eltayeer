@@ -1,10 +1,10 @@
 <?php
 return [
 
-    'posts' => 'المقالات',
-    'post' => 'مقال',
-    'add_new' => 'أضف مقال جديد',
-    'edit' => 'تعديل مقال',
+    'posts' => 'الفيديوهات',
+    'post' => 'فيديو',
+    'add_new' => 'أضف فيديو جديد',
+    'edit' => 'تعديل فيديو',
     'back_to_posts' => 'العودة للأخبار',
     'no_records' => 'لا توجد أخبار',
     'save_post' => 'حفظ الخبر',
@@ -54,7 +54,7 @@ return [
     'templates' => 'القوالب',
 
     "format_post" => "خبر",
-    "format_article" => "مقال",
+    "format_article" => "فيديو",
     "format_video" => "فيديو",
     "format_album" => "ألبوم",
     "format_event" => "حدث",
