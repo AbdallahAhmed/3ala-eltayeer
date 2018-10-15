@@ -22,7 +22,7 @@ class Category extends Model
      */
     public function posts()
     {
-        return $this->belongsToMany(Category::class, "posts_categories", "category_id", "post_id");
+        return $this->belongsToMany(Post::class, "posts_categories", "category_id", "post_id");
     }
 
 }

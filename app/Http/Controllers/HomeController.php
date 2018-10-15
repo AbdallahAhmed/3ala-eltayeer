@@ -42,8 +42,8 @@ class HomeController extends Controller
                 'view' => view('extensions.index-videos', ['videos' => $this->data['videos']])->render()
             ]);
         }
-        $this->data['categories'] = Category::whereHas('posts',function ($query){
-            $query->where('format', 'video');
+        $this->data['categories'] = Category::whereHas('posts', function ($query){
+
         })->get();
 
         return view('index', $this->data);
