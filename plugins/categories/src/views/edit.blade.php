@@ -106,7 +106,7 @@
                         <div class="panel-body form-group">
                             <div class="row post-image-block">
                                 <input type="hidden" name="image_id" class="post-image-id" value="
-                                {{ ($category and @$category->image->path != "") ? @$category->image->id : 0 }}">
+                                {{ ($category and @$category->image->path != "") ? @$category->image->id : null }}">
                                 <a class="change-post-image label" href="javascript:void(0)">
                                     <i class="fa fa-pencil text-navy"></i>
                                     {{ trans("categories::categories.change_image") }}
@@ -131,7 +131,7 @@
                         <div class="panel-body form-group">
                             <div class="row post-image-block">
                                 <input type="hidden" name="cover_id" class="post-cover-id" value="
-                                {{ ($category and @$category->cover->path != "") ? @$category->cover->id : 0 }}">
+                                {{ ($category and @$category->cover->path != "") ? @$category->cover->id : null }}">
                                 <a class="change-post-image-cover label" href="javascript:void(0)">
                                     <i class="fa fa-pencil text-navy"></i>
                                     {{ trans("categories::categories.change_cover") }}
