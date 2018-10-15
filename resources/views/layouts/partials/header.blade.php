@@ -3,7 +3,7 @@
         <div class="nav ">
             <div class="top">
                 <div class="d-inline-block logo">
-                    <a href="#">
+                    <a href="{{route('index')}}">
                         <img src="{{asset('assets')}}/images/Vector-Smart-Object.png" alt="#">
                     </a>
                 </div>
