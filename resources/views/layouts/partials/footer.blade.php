@@ -2,7 +2,7 @@
     <div class="container">
         <div class="top padding-section">
             <div class="d-inline-block logo">
-                <a href="#">
+                <a href="{{route('index')}}">
                     <img src="{{asset('assets')}}/images/Vector-Smart-Object.png" alt="#">
                 </a>
             </div>
