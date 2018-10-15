@@ -36,9 +36,9 @@
                 </div>
                 <div class="below-video">
                     <div>
-                        <img src="{{thumbnail($video->category->image->path, 'category-logo-cat')}}" alt=""
+                        <img src="{{thumbnail($category->image->path, 'category-logo-cat')}}" alt=""
                              class="ball-icon">
-                        <span class="third-title-font">{{$video->category->name}}</span>
+                        <span class="third-title-font">{{$category->name}}</span>
                     </div>
                     <div class="position-relative">
                         <div class="swiper-container gallery-thumbs" dir="rtl">

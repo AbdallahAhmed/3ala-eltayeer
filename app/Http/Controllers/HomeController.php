@@ -43,7 +43,7 @@ class HomeController extends Controller
             ]);
         }
         $this->data['categories'] = Category::whereHas('posts', function ($query){
-
+            $query->published()->where('format', 'video');
         })->get();
 
         return view('index', $this->data);
