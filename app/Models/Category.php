@@ -7,6 +7,10 @@ use Dot\Categories\Models\Category as Model;
 class Category extends Model
 {
 
+    /**
+     * Category Path
+     * @return string
+     */
     public function getPathAttribute()
     {
         return route('category', ['slug' => $this->slug]);

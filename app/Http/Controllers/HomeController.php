@@ -2,17 +2,26 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\SubscribeMail;
 use App\Models\Category;
 use App\Models\Post;
 use Dot\Platform\Classes\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
 class HomeController extends Controller
 {
     public $data = array();
 
+    /**
+     * GET /
+     * @route index
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @throws \Throwable
+     */
     public function index(Request $request)
     {
 
@@ -39,8 +48,15 @@ class HomeController extends Controller
     }
 
 
-
-    public function search(Request $request, $q)
+    /**
+     * GET /search/{q?}
+     * @route search
+     * @param Request $request
+     * @param $q
+     * @return mixed
+     * @throws \Throwable
+     */
+    public function search(Request $request, $q = '')
     {
         $offset = $request->get('offset', 0);
         $limit = $request->get('limit', 3);
@@ -55,6 +71,7 @@ class HomeController extends Controller
             })
             ->offset($offset)
             ->limit($limit)
+            ->orderBy('published_at', 'DESC')
             ->get();
         $this->data['count'] = count($this->data['videos']);
 
@@ -77,9 +94,9 @@ class HomeController extends Controller
     public function subscribe(Request $request)
     {
         $message = [
-            'email.required' => trans('app.email_required'),
-            'email.email' => trans('app.email_validation'),
-            'email.unique' => trans('app.email_unique')
+            'email.required' => trans('app.subscribe.required'),
+            'email.email' => trans('app.subscribe.validation'),
+            'email.unique' => trans('app.subscribe.unique')
         ];
         $validator = Validator::make($request->all(), [
             'email' => 'required|email|unique:newsletter_accounts',
@@ -90,6 +107,7 @@ class HomeController extends Controller
         }
         $now = Carbon::now();
         DB::table('newsletter_accounts')->insert(['email' => $request->get('email'), 'created_at' => $now, 'updated_at' => $now]);
+        Mail::to($request->get('email'))->send(new SubscribeMail($request->get('email')));
         return response()->json(['status' => true]);
     }
 }

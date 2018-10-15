@@ -10,6 +10,14 @@ class CategoryController extends Controller
 {
     public $data = array();
 
+    /**
+     * GET /category/{slug}
+     * @route category
+     * @param Request $request
+     * @param $slug
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @throws \Throwable
+     */
     public function index(Request $request, $slug)
     {
         $offset = $request->get('offset', 0);
@@ -24,6 +32,7 @@ class CategoryController extends Controller
             })
             ->take($limit)
             ->offset($offset)
+            ->orderby('published_at','DESC')
             ->get();
         $this->data['count'] = count($this->data['videos']);
         if($request->ajax()){

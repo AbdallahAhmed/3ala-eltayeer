@@ -16,7 +16,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         require app_path('./helper.php');
-        $cats = Category::with('posts')->get();
+        $cats = Category::with('posts')->take(12)->get();
         foreach ($cats as $key => $cat){
             $cats[$key]['count'] = category_count($cat->id);
         }

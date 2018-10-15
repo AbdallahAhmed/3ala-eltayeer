@@ -33,6 +33,8 @@ $(function () {
         for(i = 0; i < videos.length; ++i){
             videos[i].pauseVideo()
         }
+        //videos[galleryTop.activeIndex].playVideo()
+
     });
     var galleryThumbs = new Swiper('.gallery-thumbs', {
         spaceBetween: 20,

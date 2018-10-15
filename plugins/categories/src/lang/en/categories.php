@@ -40,6 +40,8 @@ return [
         'name' => 'Name',
         'slug' => 'Slug',
         'parent' => 'parent',
+        'cover_id' => 'cover photo',
+        'image_id'  => 'photo'
 
     ],
 

@@ -74,9 +74,13 @@
                     url: "{{route('contact-us')}}",
                     data: arr,
                     success: function () {
-                        $('.contact-section').hide();
+                        $('.contact-section').fadeOut(1000, function () {
                         $('.social-tabs').hide();
                         $('.confirm').show();
+                        });
+                    },
+                    error:function () {
+                        alert("Internal server error")
                     }
                 })
             }
@@ -85,14 +89,15 @@
         function validate(arr) {
             var valid = true;
             regex = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i;
+            name_regex =  /^[a-zA-Z\s]*$/;
 
-            if(arr.name.length < 3 || arr.name.length > 50){
+            if(arr.name.length < 3 || arr.name.length > 50 || !name_regex.test(arr.name)){
                 $('#error_first_name').show();
                 valid = false;
             }else{
                 $('#error_first_name').hide();
             }
-            if(arr.last.length < 3 || arr.last.length > 50){
+            if(arr.last.length < 3 || arr.last.length > 50 || !name_regex.test(arr.last)){
                 $('#error_last_name').show();
                 valid = false;
             }else{

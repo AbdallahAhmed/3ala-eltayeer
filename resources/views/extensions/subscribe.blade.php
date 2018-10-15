@@ -12,7 +12,7 @@
 
                 <form class="d-none">
                     <input type="text" id="email" placeholder="البريد الإلكتروني">
-                    <button><i class="icon-arrow-left"></i></button>
+                    <button id="s-button"><i class="icon-arrow-left"></i></button>
                 </form>
                 <div class="social">
                     <a  target="_blank" href="{{option('facebook_page')}}">Facebook</a>
@@ -34,8 +34,13 @@
         $(function () {
             $('.d-none').submit(function (e) {
                 e.preventDefault();
+                $("#s-button").fadeOut(200);
                 let email = $('#email').val()
-                $.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
                 $.ajax({
                     url: '{{route('subscribe')}}',
                     type: 'POST',
@@ -43,6 +48,7 @@
                         email: email
                     }
                 }).done(function (json) {
+                    $("#s-button").fadeIn(200);
                     if (json.status) {
                         //
                         $('.message').html("{{trans('app.subscribed')}}");
@@ -53,9 +59,9 @@
                         for (let error of json.errors)
                             $('.message').html( error );
                     }
-                }).fail(function (xhr, status, errorThrown) {
+                })/*.fail(function (xhr, status, errorThrown) {
                     alert('alert their error in request');
-                });
+                });*/
                 return false;
             });
         })
