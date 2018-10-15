@@ -186,7 +186,7 @@ class PostsController extends Controller
             $post->media_id = Request::get('media_id', 0);
             $post->user_id = Auth::user()->id;
             $post->status = Request::get("status", 0);
-            $post->format = Request::get("format", "post");
+            $post->format = "video";//Request::get("format", "post");
             $post->lang = app()->getLocale();
 
             $post->published_at = Request::get('published_at');
@@ -256,7 +256,7 @@ class PostsController extends Controller
             $post->image_id = Request::get('image_id');
             $post->media_id = Request::get('media_id');
             $post->status = Request::get("status", 0);
-            $post->format = Request::get("format", "post");
+            $post->format = "video";//Request::get("format", "post");
             $post->published_at = Request::get('published_at') != "" ? Request::get('published_at') : date("Y-m-d H:i:s");
             $post->lang = app()->getLocale();
 

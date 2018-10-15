@@ -224,7 +224,7 @@
                         </div>
                     </div>
 
-                    <div class="panel panel-default">
+               {{--     <div class="panel panel-default">
                         <div class="panel-heading">
                             <i class="fa fa-folder"></i>
                             {{ trans("posts::posts.attributes.format") }}
@@ -247,7 +247,7 @@
 
                         </div>
 
-                    </div>
+                    </div>--}}
 
                     <div class="panel panel-default">
                         <div class="panel-heading">
