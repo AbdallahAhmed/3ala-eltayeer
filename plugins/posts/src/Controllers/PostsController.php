@@ -200,9 +200,17 @@ class PostsController extends Controller
 
             Action::fire("post.saving", $post);
 
-            if (!$post->validate()) {
-                return Redirect::back()->withErrors($post->errors())->withInput(Request::all());
-            }
+            $errors = new MessageBag();
+            if(empty(Request::get("categories")))
+                $errors->add('category', trans('posts::posts.category'). " " . trans("posts::posts.required") . ".");
+
+            $post->validate();
+            if($post->errors() != null)
+                $errors->merge($post->errors());
+
+            if ($errors->messages())
+                return Redirect::back()->withErrors($errors)->withInput(Request::all());
+
 
             $post->save();
             $post->syncTags(Request::get("tags", []));
