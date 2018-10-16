@@ -32,6 +32,8 @@ return [
     'sure_deactivate' => "هل تريد إلغاء تفعيل الخبر",
     'sure_delete' => 'هل تريد حذف الخبر؟',
     'add_category' => "أضف إلي قسم",
+    'category' => 'التصنيف',
+    'required' => 'مطلوب',
 
     'add_image' => 'أضف صورة',
     'change_image' => 'تغيير الصورة',

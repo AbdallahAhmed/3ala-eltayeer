@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Dot\Platform\Controller;
 use Dot\Posts\Models\Post;
 use Dot\Posts\Models\PostMeta;
+use Illuminate\Support\MessageBag;
 use Redirect;
 use Request;
 use View;
@@ -264,9 +265,16 @@ class PostsController extends Controller
 
             Action::fire("post.saving", $post);
 
-            if (!$post->validate()) {
-                return Redirect::back()->withErrors($post->errors())->withInput(Request::all());
-            }
+            $errors = new MessageBag();
+            if(empty(Request::get("categories")))
+                $errors->add('category', trans('posts::posts.category'). " " . trans("posts::posts.required") . ".");
+
+            $post->validate();
+            if($post->errors() != null)
+                $errors->merge($post->errors());
+
+            if ($errors->messages())
+                return Redirect::back()->withErrors($errors)->withInput(Request::all());
 
             $post->save();
             $post->categories()->sync(Request::get("categories", []));
