@@ -46,7 +46,7 @@
             target: 'body',
             elements: {
                 checkInterval: 100,
-                selectors: ['body']
+                selectors: ['body','#load']
             },
             eventLag: {
                 minSamples: 10,
@@ -327,7 +327,7 @@
                         "<section  class=\"about load\">\n" +
                         "    <div class=\"container\">\n" +
                         "        <div class=\"sub-icons\">\n" +
-                        "            <img src=\"../assets/images/tayer.png\" alt=\"\">\n" +
+                        "            <img id='load' src=\"../assets/images/tayer.png\" alt=\"\">\n" +
                         "            <!--<img src=\"img/shapes.png\" alt=\"\" class=\"shapes\">-->\n" +
                         "            <span>"+(this.progress | 0) + "%</span>\n" +
                         "        </div>\n" +
