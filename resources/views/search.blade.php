@@ -37,7 +37,7 @@
         });
 
         offset = "{{$count}}";
-        limti = 9;
+        limit = 9;
         max = true
         $(window).scroll(function (e) {
             var hT = $('#scroll-to').offset().top,
@@ -53,6 +53,7 @@
                 $.ajax({
                     type: "get",
                     url: "{{route('search',['q' => $q])}}",
+                    data: {offset: offset, limit: limit},
                     async: false,
                     success: function (data) {
                         html = data.view;
