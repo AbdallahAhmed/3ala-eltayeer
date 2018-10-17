@@ -80,6 +80,7 @@
             </div>
         </div>
     </section>
+    @include('extensions.subscribe')
 @endsection
 @push('scripts')
     <script src="https://www.youtube.com/iframe_api"></script>
