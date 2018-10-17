@@ -76,14 +76,7 @@ $(function () {
             scrollTop: $('section:nth-of-type(2)').offset().top
         }, 'slow');
     })
-    $('.search-form button').click(function (e) {
-        if ($('.search-form input').css('display') == 'none') {
-            e.preventDefault();
-        } else if ($('.search-form input').val() == '') {
-            e.preventDefault();
-        }
-        $('.search-form input').toggle();
-    })
+
 
     var resizeId;
     $(window).resize(function() {

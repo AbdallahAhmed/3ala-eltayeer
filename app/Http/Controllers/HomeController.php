@@ -61,7 +61,7 @@ class HomeController extends Controller
     public function search(Request $request, $q = '')
     {
         $offset = $request->get('offset', 0);
-        $limit = $request->get('limit', 3);
+        $limit = $request->get('limit', 9);
         $q = trim(urldecode($q));
         $this->data['q'] = $q;
         $this->data['videos'] = Post::published()
@@ -78,7 +78,7 @@ class HomeController extends Controller
         $this->data['count'] = count($this->data['videos']);
 
         if ($request->ajax()) {
-            $this->data['view'] = view('extensions.search', ['videos' => $this->data['videos']])->render();
+            $this->data['view'] = view('extensions.index-videos', ['videos' => $this->data['videos']])->render();
             $this->data['count'] = count($this->data['videos']);
             $this->data['status'] = true;
             return response()->json($this->data);

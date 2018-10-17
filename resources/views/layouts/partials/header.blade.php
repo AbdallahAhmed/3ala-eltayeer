@@ -23,7 +23,7 @@
                         <i class="icon-menu"></i>
                     </button>
                     <form class="search-form" id="search">
-                        <input type="text" maxlength="20" placeholder="ابحث">
+                        <input type="text" name="search-input" maxlength="20" placeholder="ابحث">
                         <button class="btn-search" id="search-icon" >
                             <i class="icon-search"></i>
                         </button>
@@ -76,7 +76,17 @@
 </header>
 @push('scripts')
     <script>
-        $('.search-form').submit(function (e) {
+        $('.search-form button').click(function (e) {
+                e.preventDefault();
+            if ($('.search-form input').css('display') == 'none') {
+                $('.search-form input').toggle();
+            } else{
+                let q = $('[name="search-input"]').val();
+                window.location.href = encodeURI("{{route('index')}}" + '/search/' + encodeURIComponent(q));
+            }
+        })
+
+        /*$('.search-form').submit(function (e) {
             e.preventDefault();
             let q = $(this).find('input').val();
             if (q.trim().length == 0) {
@@ -85,6 +95,6 @@
             }
             window.location.href = encodeURI("{{route('index')}}" + '/search/' + encodeURIComponent(q));
             return false;
-        });
+        });*/
     </script>
 @endpush
