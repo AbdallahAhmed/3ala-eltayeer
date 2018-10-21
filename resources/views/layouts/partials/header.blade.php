@@ -78,23 +78,9 @@
     <script>
         $('.search-form button').click(function (e) {
                 e.preventDefault();
-            if ($('.search-form input').css('display') == 'none') {
-                $('.search-form input').toggle();
-            } else{
                 let q = $('[name="search-input"]').val();
                 window.location.href = encodeURI("{{route('index')}}" + '/search/' + encodeURIComponent(q));
-            }
         })
 
-        /*$('.search-form').submit(function (e) {
-            e.preventDefault();
-            let q = $(this).find('input').val();
-            if (q.trim().length == 0) {
-                $(this).find('input').val('');
-                return false;
-            }
-            window.location.href = encodeURI("{{route('index')}}" + '/search/' + encodeURIComponent(q));
-            return false;
-        });*/
     </script>
 @endpush
