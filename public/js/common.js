@@ -1,5 +1,22 @@
 $(function () {
 
+    $('#loading').ready( function () {
+        percentage = 0;
+        $('#percentage').innerHTML = percentage + '%';
+        $('#loading').css('display', 'block')
+        var id = setInterval(update, 10);
+        function update() {
+            if (percentage >= 100) {
+                $('#loading').css('display', 'none');
+                $('#wrapper-body').css('opacity', '1');
+                clearInterval(id);
+            } else {
+                percentage++;
+                $('#percentage').html(percentage + '%');
+            }
+        }
+    });
+
     $("body").on("click", ".shareBtn", function () {
 
         var base = $(this);

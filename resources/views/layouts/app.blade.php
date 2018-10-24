@@ -44,9 +44,9 @@
     <script src="{{asset('assets')}}/js/swiper.js"></script>
     <script src="{{asset('assets')}}/js/main.js"></script>
     <script src="{{asset('')}}/js/common.js"></script>
-    <script data-pace-options='{ "ajax": false }'  src="{{asset('')}}/js/pace.js"></script>
+    {{--<script data-pace-options='{ "ajax": false }'  src="{{asset('')}}/js/pace.js"></script>--}}
     <script>
-    Pace.once('start', function () {
+   /* Pace.once('start', function () {
         document.getElementById('wrapper-body').style.opacity = "0";
     })
 
@@ -54,15 +54,23 @@
         document.getElementById('wrapper-body').style.opacity = 1;
         document.getElementById('progress-bar').style.display = "none";
         document.getElementById('wrapper-body').style.overflow = "auto";
-    })
+    })*/
     </script>
     @stack('head')
 </head>
 <body id="body" class="{{app()->getLocale()}}">
-<div id="progress-bar" >
+<section>
+    <div id="loading" class="about load" style="display: none">
+        <div class="container">
+            <div class="sub-icons">
+                <img id="loading-image" src="../assets/images/tayer.png">
+                <span id="percentage"></span>
+            </div>
+        </div>
 
-</div>
-<div id="wrapper-body" style="opacity: 0; overflow: hidden">
+    </div>
+</section>
+<div id="wrapper-body" style="opacity: 0;">
     @yield('content')
     @include('layouts.partials.footer')
 </div>
