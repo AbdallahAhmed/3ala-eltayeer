@@ -19,3 +19,4 @@ Route::post('/subscribe', ['uses' => 'HomeController@subscribe'])->name('subscri
 Route::get('/category/{slug}', ['uses' => 'CategoryController@index'])->name('category');
 Route::get('/contact-us', ['uses' => 'ContactController@show'])->name('contact');
 Route::post('/contact-us', ['uses' => 'ContactController@send'])->name('contact-us');
+Route::get('/regenerate_media/{offset?}', 'MediaRegeneratController@regenerate_media')->name('media.cron');
