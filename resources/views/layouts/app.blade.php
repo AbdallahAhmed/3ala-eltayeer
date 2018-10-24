@@ -44,33 +44,35 @@
     <script src="{{asset('assets')}}/js/swiper.js"></script>
     <script src="{{asset('assets')}}/js/main.js"></script>
     <script src="{{asset('')}}/js/common.js"></script>
-    {{--<script data-pace-options='{ "ajax": false }'  src="{{asset('')}}/js/pace.js"></script>--}}
+    <script data-pace-options='{ "ajax": false }' src="{{asset('')}}/js/pace.js"></script>
     <script>
-   /* Pace.once('start', function () {
-        document.getElementById('wrapper-body').style.opacity = "0";
-    })
+        Pace.once('start', function () {
+            //document.getElementById('wrapper-body').style.opacity = "0";
+        })
 
-    Pace.once('hide', function () {
-        document.getElementById('wrapper-body').style.opacity = 1;
-        document.getElementById('progress-bar').style.display = "none";
-        document.getElementById('wrapper-body').style.overflow = "auto";
-    })*/
+        Pace.once('hide', function () {
+            document.getElementById('wrapper-body').style.opacity = 1;
+            document.getElementById('progress-bar').style.display = "none";
+            document.getElementById('loading').style.display = "none";
+            document.getElementById('wrapper-body').style.overflow = "auto";
+        })
     </script>
     @stack('head')
 </head>
 <body id="body" class="{{app()->getLocale()}}">
-<section>
-    <div id="loading" class="about load" style="display: none">
-        <div class="container">
-            <div class="sub-icons">
-                <img id="loading-image" src="../assets/images/tayer.png">
-                <span id="percentage"></span>
+    <div id="progress-bar">
+    </div>
+<section id="loading" style="display: none">
+        <div class="about load">
+            <div class="container">
+                <div class="sub-icons">
+                    <img id="loading-image" src="../assets/images/tayer.png">
+                    <span id="percentage"></span>
+                </div>
             </div>
         </div>
-
-    </div>
 </section>
-<div id="wrapper-body" style="opacity: 0;">
+<div id="wrapper-body" style="opacity: 0; overflow: hidden">
     @yield('content')
     @include('layouts.partials.footer')
 </div>

@@ -46,7 +46,7 @@
             target: 'body',
             elements: {
                 checkInterval: 100,
-                selectors: ['body','#load']
+                selectors: ['body']
             },
             eventLag: {
                 minSamples: 10,
@@ -323,8 +323,8 @@
                 }
                 if (!this.lastRenderedProgress || this.lastRenderedProgress | 0 !== this.progress | 0) {
                     el.children[0].setAttribute('data-progress-text', "" + (this.progress | 0) + "%");
-                    window.__progress_bar_number.innerHTML =
-                        "<section  class=\"about load\">\n" +
+                    window.__progress_bar_number.innerHTML = ""
+                       /* "<section  class=\"about load\">\n" +
                         "    <div class=\"container\">\n" +
                         "        <div class=\"sub-icons\">\n" +
                         "            <img id='load' src=\"../assets/images/tayer.png\" alt=\"\">\n" +
@@ -333,7 +333,8 @@
                         "        </div>\n" +
                         "    </div>\n" +
                         "\n" +
-                        "</section>";
+                        "</section>";*/
+                   $('#percentage').html((this.progress|0)+'%');
 
                     if (this.progress >= 100) {
                         progressStr = '99';
