@@ -62,7 +62,7 @@
 <body id="body" class="{{app()->getLocale()}}">
     <div id="progress-bar">
     </div>
-<section id="loading" style="display: none">
+<section id="loading" >
         <div class="about load">
             <div class="container">
                 <div class="sub-icons">
