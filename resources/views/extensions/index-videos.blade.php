@@ -14,8 +14,9 @@
                 <a href="{{$video->category->path}}">
                     <div class="title d-inline-block">
                         <img
-                                src="{{thumbnail($video->category->image->path,'category-logo')}}"
-                                alt="{{$video->category->name}}">
+                                src="../uploads/{{$video->category->image->path}}"
+                                alt="{{$video->category->name}}"
+                                style="max-width: 30px">
                         <span class="second-title-font">{{$video->category->name}}</span>
                     </div>
                 </a>
