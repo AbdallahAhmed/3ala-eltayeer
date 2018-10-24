@@ -162,16 +162,13 @@ section {
     font-size: 0;
     margin-top: 40px;
     padding-bottom: 30px;
-    position: sticky;
-    top: 0;
-    z-index: 999;
     background: #1F232A; }
     .search-section .search-page form {
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       padding: 16px 0 9px; }
     .search-section .search-page input {
       width: calc(100% - 35px);
-      color: rgba(255, 255, 255, 0.1); }
+      color: #ffffff; }
       .search-section .search-page input::placeholder {
         color: rgba(255, 255, 255, 0.1); }
     .search-section .search-page button {
@@ -314,7 +311,7 @@ section {
       .cards .card .img-card:hover .hover-card {
         display: flex;
         align-items: center; }
-      .cards .card .img-card:hover a img {
+      .cards .card .img-card:hover > a img {
         transform: scale(1.2);
         transition: 0.5s; }
       .cards .card .img-card img {
