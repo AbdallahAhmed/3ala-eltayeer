@@ -65,6 +65,8 @@
         spaceBetween: 0,
         centeredSlides: true,
         slideToClickedSlide: true,
+        simulateTouch:false,
+        loop: true,
         navigation: {
             prevEl: '.swiper-button-next.swiper-button-white',
             nextEl: '.swiper-button-prev.swiper-button-white'

@@ -1,10 +1,10 @@
 $(function () {
 
-    $('#loading').ready( function () {
+    $('#loading').onload =  function () {
         percentage = 0;
         $('#percentage').html(percentage + '%');
         $('#loading').css('display', 'block')
-    });
+    };
 
     $("body").on("click", ".shareBtn", function () {
 

@@ -51,6 +51,7 @@
                     $("#s-button").fadeIn(200);
                     if (json.status) {
                         //
+                        $('#email').val('')
                         $('.message').html("{{trans('app.subscribed')}}");
                         $('.message').css('display', 'block')
                         $('.message').fadeOut(3000);
@@ -64,6 +65,7 @@
                 });*/
                 return false;
             });
+
         })
     </script>
 @endpush
