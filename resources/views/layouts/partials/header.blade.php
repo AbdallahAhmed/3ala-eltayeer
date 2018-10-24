@@ -19,7 +19,7 @@
                                         <ul class="dropdown-categories">
                                             @foreach($cats as $cat)
                                                 <li>
-                                                    <img src="{{thumbnail($cat->image->path)}}" alt="">
+                                                    <img src="../uploads/{{$cat->image->path}}" alt="">
                                                     <a href="{{$cat->path}}">
                                                         <span>{{$cat->name}}</span>
                                                         <span>{{$cat->count}}.{{trans('app.video')}}</span>
