@@ -60,11 +60,12 @@
             document.getElementById('progress-bar').style.display = "none";
             document.getElementById('loading').style.display = "none";
             document.getElementById('wrapper-body').style.overflow = "auto";
+            document.getElementById('body').style.height = "auto";
         })
     </script>
     @stack('head')
 </head>
-<body id="body" class="{{app()->getLocale()}}">
+<body id="body" class="{{app()->getLocale()}}" style="overflow: hidden;height: 100vh">
     <div id="progress-bar">
     </div>
 <section id="loading" >
