@@ -40,7 +40,11 @@
           integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" href="{{asset('assets')}}/css/fontawesome-all.css">
     <link rel="stylesheet" href="{{asset('assets')}}/css/main.css">
-    <script src="{{asset('assets')}}/js/jquery-3.3.1.min.js"></script>
+    {{--<script src="{{asset('assets')}}/js/jquery-3.3.1.min.js"></script>--}}
+    <script
+            src="https://code.jquery.com/jquery-1.8.2.min.js"
+            integrity="sha256-9VTS8JJyxvcUR+v+RTLTsd0ZWbzmafmlzMmeZO9RFyk="
+            crossorigin="anonymous"></script>
     <script src="{{asset('assets')}}/js/swiper.js"></script>
     <script src="{{asset('assets')}}/js/main.js"></script>
     <script src="{{asset('')}}/js/common.js"></script>

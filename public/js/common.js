@@ -1,9 +1,12 @@
 $(function () {
 
-    $(window).on('load', function () {
+    $('section:first-of-type img:first-of-type').load(function () {
+        console.log($(this))
+        $('#loading').css('display', 'block')
+        alert();
+        return;
         percentage = 0;
         $('#percentage').html(percentage + '%');
-        $('#loading').css('display', 'block')
     });
 
     $("body").on("click", ".shareBtn", function () {
