@@ -40,6 +40,7 @@
           integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" href="{{asset('assets')}}/css/fontawesome-all.css">
     <link rel="stylesheet" href="{{asset('assets')}}/css/main.css">
+    <link rel="stylesheet" href="{{asset('')}}/css/common.css">
     {{--<script src="{{asset('assets')}}/js/jquery-3.3.1.min.js"></script>--}}
     <script
             src="https://code.jquery.com/jquery-1.8.2.min.js"
@@ -51,7 +52,7 @@
     <script data-pace-options='{ "ajax": false }' src="{{asset('')}}/js/pace.js"></script>
     <script>
         Pace.once('start', function () {
-            //document.getElementById('wrapper-body').style.opacity = "0";
+            document.getElementById('wrapper-body').style.opacity = "0";
         })
 
         Pace.once('hide', function () {
@@ -66,8 +67,9 @@
 <body id="body" class="{{app()->getLocale()}}">
     <div id="progress-bar">
     </div>
-<section id="loading" >
-        <div class="about load">
+<section id="loading" style="display: block;">
+    <img src="../assets/images/commonBg.png" alt="" id="loading">
+        <div class="about2 load">
             <div class="container">
                 <div class="sub-icons">
                     <img id="loading-image" src="../assets/images/tayer.png">
