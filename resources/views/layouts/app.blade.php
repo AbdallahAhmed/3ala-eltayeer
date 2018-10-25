@@ -67,7 +67,7 @@
 <body id="body" class="{{app()->getLocale()}}">
     <div id="progress-bar">
     </div>
-<section id="loading" style="display: block;">
+<section id="loading" >
     <img src="../assets/images/commonBg.png" alt="" id="loading">
         <div class="about2 load">
             <div class="container">

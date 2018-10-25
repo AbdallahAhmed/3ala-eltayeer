@@ -323,17 +323,7 @@
                 }
                 if (!this.lastRenderedProgress || this.lastRenderedProgress | 0 !== this.progress | 0) {
                     el.children[0].setAttribute('data-progress-text', "" + (this.progress | 0) + "%");
-                    window.__progress_bar_number.innerHTML = ""
-                       /* "<section  class=\"about load\">\n" +
-                        "    <div class=\"container\">\n" +
-                        "        <div class=\"sub-icons\">\n" +
-                        "            <img id='load' src=\"../assets/images/tayer.png\" alt=\"\">\n" +
-                        "            <!--<img src=\"img/shapes.png\" alt=\"\" class=\"shapes\">-->\n" +
-                        "            <span>"+(this.progress | 0) + "%</span>\n" +
-                        "        </div>\n" +
-                        "    </div>\n" +
-                        "\n" +
-                        "</section>";*/
+                    window.__progress_bar_number.innerHTML = "";
                    $('#percentage').html((this.progress|0)+'%');
 
                     if (this.progress >= 100) {
