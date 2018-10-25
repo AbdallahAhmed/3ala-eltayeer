@@ -59,7 +59,6 @@
             document.getElementById('wrapper-body').style.opacity = 1;
             document.getElementById('progress-bar').style.display = "none";
             document.getElementById('loading').style.display = "none";
-            document.getElementById('wrapper-body').style.overflow = "auto";
             document.getElementById('body').style.height = "auto";
         })
     </script>
@@ -79,7 +78,7 @@
             </div>
         </div>
 </section>
-<div id="wrapper-body" style="opacity: 0; overflow: hidden">
+<div id="wrapper-body" style="opacity: 0;">
     @yield('content')
     @include('layouts.partials.footer')
 </div>
