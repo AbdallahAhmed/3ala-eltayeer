@@ -1,3 +1,4 @@
+@section('footer')
 <footer>
     <div class="container">
         <div class="top padding-section">
@@ -40,3 +41,4 @@
         </div>
     </div>
 </footer>
+    @endsection
