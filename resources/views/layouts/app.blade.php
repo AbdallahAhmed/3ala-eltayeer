@@ -65,23 +65,23 @@
     @stack('head')
 </head>
 <body id="body" class="{{app()->getLocale()}}" style="overflow: hidden;height: 100vh">
-    <div id="progress-bar">
-    </div>
-<section id="loading" >
+<div id="progress-bar">
+</div>
+<section id="loading">
     <img src="../assets/images/commonBg.png" alt="" id="loading">
-        <div class="about2 load">
-            <div class="container">
-                <div class="sub-icons">
-                    <img id="loading-image" src="../assets/images/tayer.png">
-                    <span id="percentage"></span>
-                </div>
+    <div class="about2 load">
+        <div class="container">
+            <div class="sub-icons">
+                <img id="loading-image" src="../assets/images/tayer.png">
+                <span id="percentage"></span>
             </div>
         </div>
+    </div>
 </section>
 <div id="wrapper-body" style="opacity: 0;">
     @yield('content')
-    @yield('layouts.partials.footer')
 </div>
+@include('layouts.partials.footer')
 </body>
 @stack('scripts')
 </html>
