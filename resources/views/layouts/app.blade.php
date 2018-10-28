@@ -80,8 +80,8 @@
 </section>
 <div id="wrapper-body" style="opacity: 0;">
     @yield('content')
+    @include('layouts.partials.footer')
 </div>
-@include('layouts.partials.footer')
 </body>
 @stack('scripts')
 </html>
