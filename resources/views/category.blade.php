@@ -99,8 +99,16 @@
                     data: {'offset': offset, 'limit': 12},
                     success: function (data) {
                         if (data.count > 0) {
-                            $(data.view).hide().insertBefore('.btn-more').fadeIn(800);
+                            $(data.view).insertBefore('.btn-more');
                             offset += data.count;
+                            $('.card').each(function () {
+                                if ($(this).isInViewport()) {
+                                    $(this).css({
+                                        opacity: '1',
+                                        transform: 'translateY(-10px)'
+                                    });
+                                }
+                            });
                         }
                         if (data.count < 12)
                             $('.btn-more').remove();

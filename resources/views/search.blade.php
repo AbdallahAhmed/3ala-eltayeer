@@ -58,7 +58,16 @@
                     success: function (data) {
                         html = data.view;
                         if (data.count > 0) {
-                            $(html).insertBefore('#more').hide().fadeIn(1000);
+                            $(html).insertBefore('#more');
+                            $('.card').each(function () {
+                                if ($(this).isInViewport()) {
+                                    $(this).css({
+                                        opacity: '1',
+                                        transform: 'translateY(-10px)'
+                                    });
+                                }
+                            });
+                            offset += data.count;
                         }
                         if (data.count < 9)
                             max = false;

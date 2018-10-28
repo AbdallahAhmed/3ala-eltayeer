@@ -5,7 +5,7 @@ $(function () {
     });
 
     galleryTop.on('slideChange', function () {
-        for(i = 0; i < videos.length; ++i){
+        for (i = 0; i < videos.length; ++i) {
             videos[i].pauseVideo()
         }
 
@@ -84,16 +84,8 @@ $(function () {
         return elementBottom > viewportTop && elementTop < viewportBottom;
     };
 
-    $('.card').each(function () {
-        if ($(this).isInViewport()) {
-            $(this).css({
-                opacity: '1',
-                transform: 'translateY(-10px)'
-            });
-        }
-    });
 
-    $(window).on('resize scroll', function () {
+    function updateCards() {
         $('.card').each(function () {
             if ($(this).isInViewport()) {
                 $(this).css({
@@ -102,5 +94,12 @@ $(function () {
                 });
             }
         });
+    }
+
+    updateCards();
+
+    $(window).on('resize scroll', function () {
+        updateCards();
+
     });
 });
