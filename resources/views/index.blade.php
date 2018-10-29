@@ -67,6 +67,7 @@
         slideToClickedSlide: true,
         simulateTouch:false,
         loop: true,
+        autoplay: true,
         navigation: {
             prevEl: '.swiper-button-next.swiper-button-white',
             nextEl: '.swiper-button-prev.swiper-button-white'
