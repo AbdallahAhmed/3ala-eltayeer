@@ -34,7 +34,8 @@
             "Dot\\Tags\\": "plugins/tags/src/",
             "Dot\\Blocks\\": "plugins/blocks/src/",
             "Dot\\Galleries\\": "plugins/galleries/src/",
-            "Dot\\Media\\": "plugins/media/src/"
+            "Dot\\Media\\": "plugins/media/src/",
+            "Dot\\Users\\": "plugins/users/src/"
         }
     },
     "autoload-dev": {
