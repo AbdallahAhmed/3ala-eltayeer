@@ -89,11 +89,12 @@
                                         <option value="-1"
                                                 selected="selected">{{ trans("categories::categories.bulk_actions") }}</option>
                                         <option
-                                            value="delete">{{ trans("categories::categories.delete") }}</option>
+                                                value="delete">{{ trans("categories::categories.delete") }}</option>
 
                                     </select>
                                     <button type="submit"
-                                            class="btn btn-primary pull-right">{{ trans("categories::categories.apply") }}</button>
+                                            class="btn btn-primary pull-right"
+                                            id="action-button">{{ trans("categories::categories.apply") }}</button>
 
                                 </div>
 
@@ -183,6 +184,27 @@
     <script>
 
         $(document).ready(function () {
+
+            $('#action-button').on('click', function (e) {
+                e.preventDefault();
+                bootbox.confirm({
+                        message: "هل تريد تنفيذ الأمر؟",
+                        buttons: {
+                            cancel: {
+                                label: "الغاء",
+                            },
+                            confirm: {
+                                label: "موافق",
+                            },
+                        },
+                        callback: function (result) {
+                            if (result) {
+                                $('.action_form').submit();
+                            }
+                        }
+                    },
+                );
+            })
 
             $('[data-toggle="tooltip"]').tooltip();
 
