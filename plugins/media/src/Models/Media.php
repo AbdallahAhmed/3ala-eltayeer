@@ -654,7 +654,7 @@ class Media extends Model
         }
         $posts = Category::all();
         foreach ($posts as $post){
-            if($post->image_id == $this->id || $post->media_id == $this->id)
+            if($post->image_id == $this->id || $post->cover_id == $this->id)
                 return true;
         }
         return false;
