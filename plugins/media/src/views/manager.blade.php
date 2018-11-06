@@ -97,7 +97,7 @@
                                     <div class="list-group" style="margin-top: 93px; padding: 10px;">
 
                                         <div
-                                            class="input-group input-group-md col-lg-10 col-md-10 col-sm-10 col-xs-10 pull-left">
+                                                class="input-group input-group-md col-lg-10 col-md-10 col-sm-10 col-xs-10 pull-left">
                                             <span class="input-group-addon">
                                                 <i class="fa fa-link"></i>
                                             </span>
@@ -342,8 +342,10 @@
 
                             <input type="hidden" class="media-grid-page" value="1"/>
                             <input type="hidden" class="media-grid-type" value="all"/>
-
-                            <div class="media-grid pull-left col-lg-10 col-md-9 col-sm-9 col-xs-12 text-center"></div>
+                            <div class="alert alert-danger alert-dark" id="media-error"
+                                 style="display: none;margin: 60px auto 0;text-align: center;width: 40%;">يوجد ملفات مرفقة للميديا</div>
+                            <div class="media-grid pull-left col-lg-10 col-md-9 col-sm-9 col-xs-12 text-center" style="margin-top: -5px">
+                            </div>
                             <div class="media-form-wrapper pull-right col-lg-2 col-md-3 col-sm-3 hidden-xs">
                                 <br/>
                                 <!-- Extra small tabs -->
@@ -511,8 +513,8 @@
                                                     <i class="fa fa-camera"></i>
                                                 </span>
                                                     <input
-                                                        placeholder="{{ trans("media::media.gallery_name") }}"
-                                                        value="" class="form-control" name="name">
+                                                            placeholder="{{ trans("media::media.gallery_name") }}"
+                                                            value="" class="form-control" name="name">
                                                 </div>
                                                 <br/>
                                                 <div class="input-group input-group-lg">
@@ -520,8 +522,8 @@
                                                     <i class="fa fa-user"></i>
                                                 </span>
                                                     <input
-                                                        placeholder="{{ trans("media::media.author_name") }}"
-                                                        value="" class="form-control" name="author">
+                                                            placeholder="{{ trans("media::media.author_name") }}"
+                                                            value="" class="form-control" name="author">
                                                 </div>
                                             </div>
                                             <div class="modal-footer">
@@ -557,8 +559,8 @@
                                                     <i class="fa fa-camera"></i>
                                                 </span>
                                                     <input
-                                                        placeholder="{{ trans("media::media.gallery_name") }}"
-                                                        value="" class="form-control" name="name">
+                                                            placeholder="{{ trans("media::media.gallery_name") }}"
+                                                            value="" class="form-control" name="name">
                                                 </div>
                                                 <br/>
                                                 <div class="input-group input-group-lg">
@@ -566,8 +568,8 @@
                                                     <i class="fa fa-user"></i>
                                                 </span>
                                                     <input
-                                                        placeholder="{{ trans("media::media.author_name") }}"
-                                                        value="" class="form-control" name="author">
+                                                            placeholder="{{ trans("media::media.author_name") }}"
+                                                            value="" class="form-control" name="author">
                                                 </div>
 
                                             </div>
@@ -593,7 +595,7 @@
                                     <ul class="breadcrumb breadcrumb-no-padding"
                                         style="display: inline;line-height: 31px;">
                                         <li><a href="#"><i
-                                                    class="fa fa-camera"></i> {{ trans("media::media.galleries") }}
+                                                        class="fa fa-camera"></i> {{ trans("media::media.galleries") }}
                                             </a></li>
                                         <li><a href="#" class="name"></a></li>
                                     </ul>
@@ -614,10 +616,10 @@
                                         </button>
 
                                         <button
-                                            data-loading-text="{{ trans("media::media.deleting_gallery") }}"
-                                            id="delete_gallery" type="button" class="btn btn-default"
-                                            aria-label="{{ trans("media::media.add_to_gallery") }}"
-                                            data-message="{{ trans("galleries::galleries.delete_gallery") }}">
+                                                data-loading-text="{{ trans("media::media.deleting_gallery") }}"
+                                                id="delete_gallery" type="button" class="btn btn-default"
+                                                aria-label="{{ trans("media::media.add_to_gallery") }}"
+                                                data-message="{{ trans("galleries::galleries.delete_gallery") }}">
                                             <i class="fa fa-trash" aria-hidden="true"></i>
                                         </button>
 
@@ -671,7 +673,7 @@
 
                                     <div class="form-group">
                                         <label>{{ trans("media::media.start_time") }} <span
-                                                class="badge"> {{ trans("media::media.seconds") }} </span></label>
+                                                    class="badge"> {{ trans("media::media.seconds") }} </span></label>
 
                                         <input type="number" class="form-control" name="embed_start" placeholder="0"
                                                value="0">

@@ -3,7 +3,10 @@
 namespace Dot\Media\Models;
 
 use Config;
+use Dot\Categories\Models\Category;
+use Dot\Pages\Models\Page;
 use Dot\Platform\Model;
+use Dot\Posts\Models\Post;
 use Exception;
 use File;
 use Illuminate\Support\Facades\Auth;
@@ -635,6 +638,26 @@ class Media extends Model
             return FALSE;
         }
 
+    }
+
+    function getHasPostsAttribute()
+    {
+        $posts = Post::all();
+        foreach ($posts as $post){
+            if($post->image_id == $this->id || $post->media_id == $this->id)
+                return true;
+        }
+        $posts = Page::all();
+        foreach ($posts as $post){
+            if($post->image_id == $this->id)
+                return true;
+        }
+        $posts = Category::all();
+        foreach ($posts as $post){
+            if($post->image_id == $this->id || $post->media_id == $this->id)
+                return true;
+        }
+        return false;
     }
 
 

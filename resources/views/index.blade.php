@@ -48,11 +48,11 @@
         <hr class="under-line">
         <div class="cards">
             @include('extensions.index-videos', $videos)
-            @if(count($videos) == 12)
+            {{--@if(count($videos) == 12)--}}
             <div class="btn-more">
                 <button class="more">{{trans('app.more')}}</button>
             </div>
-            @endif
+            {{--@endif--}}
         </div>
 
     </div>
@@ -112,5 +112,6 @@
             })
         });
     })
+
 </script>
     @endsection

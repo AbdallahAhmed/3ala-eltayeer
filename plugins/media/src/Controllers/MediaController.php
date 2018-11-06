@@ -513,7 +513,8 @@ class MediaController extends Controller
         if (Request::isMethod("post")) {
 
             $media = Media::find(Request::get("id"));
-
+            if($media->has_posts)
+                return Response::json(["error"=>"يوجد ملفات مرفقة للميديا"], 404);
             $media->delete();
 
             if ($media->provider == NULL or $media->provider == "") {
