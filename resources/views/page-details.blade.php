@@ -4,7 +4,7 @@
     <section class="about original">
         @include('layouts.partials.header')
         <div class="container">
-            <p class="third-title-font padding-section">عن على الطاير</p>
+            <p class="third-title-font padding-section">{{$page->title}}</p>
             <div class="sub-icons">
                 <img src="{{assets('assets')}}/images/tayer.png" alt="">
                 <!--<img src="img/shapes.png" alt="" class="shapes">-->
