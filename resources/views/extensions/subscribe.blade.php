@@ -34,12 +34,12 @@
                             <img src="{{ thumbnail($file->path , 'slider') }}" alt="{{ $file->title }}">
                         </div>
                         @endforeach
-                        <div class="swiper-slide">
-                            <img src="{{assets('assets')}}/images/6plus.png" alt="">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="{{assets('assets')}}/images/6plus.png" alt="">
-                        </div>
+                        {{--<div class="swiper-slide">--}}
+                            {{--<img src="{{assets('assets')}}/images/6plus.png" alt="">--}}
+                        {{--</div>--}}
+                        {{--<div class="swiper-slide">--}}
+                            {{--<img src="{{assets('assets')}}/images/6plus.png" alt="">--}}
+                        {{--</div>--}}
                     </div>
                 </div>
             </div>
