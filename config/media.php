@@ -45,7 +45,8 @@ return [
         'category-logo' => array(19, 24),
         'category-logo-cat' => array(25, 24),
         'video-details' => array(782, 447),
-        'swiper-small'  => array(99, 56)
+        'swiper-small'  => array(99, 56),
+        'slider'        => array(236,474)
     ],
 
     /*

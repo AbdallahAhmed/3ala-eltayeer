@@ -18,14 +18,14 @@ class Galleries extends \Dot\Platform\Plugin
 
         parent::boot();
 
-        /*Navigation::menu("sidebar", function ($menu) {
+      Navigation::menu("sidebar", function ($menu) {
 
             if (Auth::user()->can("galleries.manage")) {
                 $menu->item('galleries', trans("admin::common.galleries"), route("admin.galleries.show"))
                     ->order(5)
                     ->icon("fa-camera");
             }
-        });*/
+        });
     }
 
 }

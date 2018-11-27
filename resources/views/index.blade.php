@@ -60,7 +60,7 @@
     @include('extensions.subscribe')
 
 <script>
-    var swiper = new Swiper('.swiper-container', {
+    var swiper = new Swiper('.swiper .swiper-container', {
         slidesPerView: 3,
         spaceBetween: 0,
         centeredSlides: true,

@@ -1,6 +1,7 @@
 <section class="subscribe">
     <div class="bg-center"></div>
     <div class="container">
+        {{--{{ dd($slider->files) }}--}}
         <div class="text-container">
             <div class="text">
                 <p class="main-title-font ">اشترك الآن</p>
@@ -25,7 +26,23 @@
 
         </div>
         <div class="images">
-            <img src="{{assets('assets')}}/images/6plus.png" alt="#">
+            <div class="slider-subscribe rtl-container">
+                <div class="swiper-container " dir="rtl">
+                    <div class="swiper-wrapper ">
+                        @foreach($slider->files as $file)
+                        <div class="swiper-slide">
+                            <img src="{{ thumbnail($file->path , 'slider') }}" alt="{{ $file->title }}">
+                        </div>
+                        @endforeach
+                        <div class="swiper-slide">
+                            <img src="{{assets('assets')}}/images/6plus.png" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="{{assets('assets')}}/images/6plus.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -64,6 +81,18 @@
                     alert('alert their error in request');
                 });*/
                 return false;
+            });
+
+            var subscribe = new Swiper('.slider-subscribe .swiper-container', {
+                navigation: {
+                    nextEl: '.slider-1 .swiper-button-next',
+                    prevEl: '.slider-1 .swiper-button-prev',
+                },
+            });
+            subscribe.on('slideChange', () => {
+                var children = $('.subscribe .social').children();
+                children.removeClass('active-link');
+                $(children[subscribe.realIndex]).addClass('active-link')
             });
 
         })

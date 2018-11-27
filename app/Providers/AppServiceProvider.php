@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\Category;
+use Dot\Galleries\Models\Gallery;
 use Dot\Navigations\Models\Nav;
 use Illuminate\Support\ServiceProvider;
 
@@ -29,6 +30,13 @@ class AppServiceProvider extends ServiceProvider
             ($nav = Nav::with('items')->where(['menu' => "15"])->get());
 
             $view->with('footerNav', $nav);
+        });
+
+        view()->composer('extensions.subscribe', function ($view) {
+
+            $slider = Gallery::get()->first();
+
+            $view->with('slider', $slider);
         });
 
         view()->composer('layouts.partials.header', function ($view) use ($cats) {
