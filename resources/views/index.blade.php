@@ -10,7 +10,7 @@
                 <a  target="_blank" href="{{option('youtube_page')}}">Youtube</a>
             </div>
             <div class="scroll">
-                <a href="#"><i class="icon-arrow-down"></i> Scroll down</a>
+                <a href="#"><i class="icon-arrow-down"></i> انتقل للأسفل</a>
             </div>
             <div class="swiper">
                 <div class="swiper-container">
