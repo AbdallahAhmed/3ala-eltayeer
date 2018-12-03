@@ -84,9 +84,10 @@
             });
 
             var subscribe = new Swiper('.slider-subscribe .swiper-container', {
+                autoplay: true,
                 navigation: {
                     nextEl: '.slider-1 .swiper-button-next',
-                    prevEl: '.slider-1 .swiper-button-prev',
+                    prevEl: '.slider-1 .swiper-bu34tton-prev',
                 },
             });
             subscribe.on('slideChange', () => {
