@@ -1889,6 +1889,9 @@ video {
         top: 0;
         height: 92%;
     }
+
+    .slider-subscribe {
+        margin: auto; }
 }
 
 @media only screen and (max-width: 481px) {
