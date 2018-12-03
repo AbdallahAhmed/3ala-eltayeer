@@ -16,7 +16,7 @@
                     <button id="s-button"><i class="icon-arrow-left"></i></button>
                 </form>
                 <div class="social">
-                    <a  target="_blank" href="{{option('facebook_page')}}">Facebook</a>
+                    <a  target="_blank" class="active-link" href="{{option('facebook_page')}}">Facebook</a>
                     <a  target="_blank" href="{{option('twitter_page')}}">Twitter</a>
                     <a  target="_blank" href="{{option('youtube_page')}}">Youtube</a>
                 </div>
